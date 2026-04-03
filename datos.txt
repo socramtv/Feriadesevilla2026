@@ -1,0 +1,69 @@
+-Tv se repodruzcan en la app directo coje de aqui los enlaces:
+7TV Sevilla
+https://especial7tv.gestec-video.com/hls/7TVSEVILLA.m3u8
+
+PTV Sevilla
+https://streamer.zapitv.com/PTV_sevilla/index.m3u8
+
+Canal Sur Tv
+https://live-24-canalsur.interactvty.pro/9bb0f4edcb8946e79f5017ddca6c02b0/26af5488cda642ed2eddd27a6328c93b9c03e9181b9d0a825147a7d978e69202.m3u8
+
+-Camaras: pon estas camaras
+Glorieta cigarreras:
+https://traficosevilla.es/camaras/cam55.jpg
+
+Flota de India 1:
+https://traficosevilla.es/camaras/cam56.jpg
+
+Asunción - Avd Flota de India:
+https://traficosevilla.es/camaras/cam85.jpg
+
+Plaza de Cuba:
+https://traficosevilla.es/camaras/cam28.jpg
+
+https://traficosevilla.es/camaras/cam85.jpg?1712914782695
+
+
+
+-plano:
+En plano de la feria lo cambias por el que te envío o has que se parezca lo mas fiel al que te envío con sus calles reales.
+https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/plano.png 
+
+-CASETAS:
+Que se pueda filtrar
+
+O buscar por nombre
+
+Calles: todas las calles o por cada calle
+
+Acceso: todas, publica, privada
+
+Y cada caseta tenga un botón de añadir a favorito y otro de llevarte al mapa para ir. Te envío base de datos. 
+
+
+-ATRACCIONES:
+Filtrar 
+
+Por nombre o por edad: adulto o niño.
+Te envío base de datos
+
+-Otro apartado de puntos de interés
+
+-Abajo una barra con inicio, buscador,favorito, punto de interés
+Y en la de arriba pues deja solo caseta, atracciones, plano, tv/cam y puntos de interés
+
+
+
+
+
+
+
+
+
+
+-Actualiza la fecha de la feria que es esta Del 21 al 26 de Abril 2026
+
+
+-Se podría añadir también un encuentra mi coche, con un mapa para guardar tu ubicación y buscarla mas tarde, con dos botones uno guarda tu ubicación y otro como llegar a tu coche
+
+Hazla pwa
