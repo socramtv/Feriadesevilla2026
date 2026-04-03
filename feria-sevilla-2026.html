@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Feria de Abril Sevilla 2026</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#B5001E">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --rojo: #B5001E;
+  --rojo-dark: #7A0015;
+  --rojo-light: #E0002A;
+  --amarillo: #F5C800;
+  --amarillo-light: #FFE066;
+  --verde: #006B3C;
+  --blanco: #FFF9F0;
+  --crema: #FFF3D6;
+  --gris: #F0EBE0;
+  --texto: #1A0A00;
+  --texto-muted: #6B4C30;
+  --sombra: rgba(181,0,30,0.15);
+}
+
+html, body {
+  height: 100%;
+  background: var(--rojo-dark);
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* ========== LAYOUT ========== */
+.app {
+  max-width: 430px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background: var(--crema);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========== HEADER ========== */
+.header {
+  background: var(--rojo);
+  padding: 14px 16px 12px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 18px,
+    rgba(255,255,255,0.04) 18px,
+    rgba(255,255,255,0.04) 20px
+  );
+  pointer-events: none;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-farolillo {
+  font-size: 28px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+  animation: mecerse 3s ease-in-out infinite;
+}
+
+@keyframes mecerse {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+
+.header-title {
+  font-family: 'Abril Fatface', serif;
+  color: var(--amarillo);
+  font-size: 22px;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  letter-spacing: 0.5px;
+}
+
+.header-subtitle {
+  font-family: 'Dancing Script', cursive;
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.header-year {
+  background: var(--amarillo);
+  color: var(--rojo-dark);
+  font-family: 'Abril Fatface', serif;
+  font-size: 20px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.header-fechas {
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.2);
+  border-radius: 20px;
+  padding: 3px 12px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+/* ========== NAV TABS ========== */
+.nav {
+  background: var(--rojo-dark);
+  display: flex;
+  flex-shrink: 0;
+  border-bottom: 3px solid var(--amarillo);
+}
+
+.nav-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Nunito', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 9px 4px 7px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.nav-btn .nav-ico {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.nav-btn.active {
+  color: var(--amarillo);
+  background: rgba(245,200,0,0.1);
+}
+
+.nav-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: var(--amarillo);
+  border-radius: 2px 2px 0 0;
+}
+
+/* ========== CONTENT AREA ========== */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.content::-webkit-scrollbar { width: 4px; }
+.content::-webkit-scrollbar-track { background: transparent; }
+.content::-webkit-scrollbar-thumb { background: var(--rojo); border-radius: 2px; }
+
+/* ========== SCREENS ========== */
+.screen {
+  display: none;
+  min-height: 100%;
+  padding: 16px;
+  animation: fadeIn 0.25s ease;
+}
+.screen.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== SECTION HEADERS ========== */
+.section-title {
+  font-family: 'Abril Fatface', serif;
+  color: var(--rojo);
+  font-size: 20px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========== BUSCADOR DE CASETAS ========== */
+.search-box {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 13px 46px 13px 16px;
+  border: 2px solid var(--rojo);
+  border-radius: 14px;
+  background: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: var(--texto);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--amarillo);
+  box-shadow: 0 0 0 3px rgba(245,200,0,0.25);
+}
+
+.search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.filter-pills::-webkit-scrollbar { display: none; }
+
+.pill {
+  flex-shrink: 0;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 2px solid var(--rojo);
+  background: white;
+  color: var(--rojo);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.pill.active, .pill:hover {
+  background: var(--rojo);
+  color: white;
+}
+
+.casetas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.caseta-card {
+  background: white;
+  border-radius: 14px;
+  padding: 14px 16px;
+  border-left: 5px solid var(--rojo);
+  box-shadow: 0 2px 12px var(--sombra);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+
+.caseta-card:hover, .caseta-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--sombra);
+}
+
+.caseta-card.privada { border-left-color: #888; }
+.caseta-card.municipal { border-left-color: var(--verde); }
+.caseta-card.peña { border-left-color: #8B4513; }
+
+.caseta-emoji {
+  font-size: 32px;
+  flex-shrink: 0;
+  width: 44px;
+  text-align: center;
+}
+
+.caseta-info { flex: 1; min-width: 0; }
+
+.caseta-nombre {
+  font-weight: 800;
+  font-size: 14.5px;
+  color: var(--texto);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.caseta-meta {
+  font-size: 12px;
+  color: var(--texto-muted);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.caseta-badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.badge-publica { background: #e6f9ef; color: var(--verde); }
+.badge-privada { background: #f0f0f0; color: #666; }
+.badge-municipal { background: #e6f9ef; color: var(--verde); }
+.badge-peña { background: #fdf0e0; color: #8B4513; }
+
+.no-results {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--texto-muted);
+  font-size: 15px;
+}
+
+.no-results .no-icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ========== PLANO ========== */
+.plano-container {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--sombra);
+  margin-bottom: 16px;
+}
+
+.plano-header {
+  background: var(--rojo);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plano-header h3 {
+  color: var(--amarillo);
+  font-family: 'Abril Fatface', serif;
+  font-size: 16px;
+}
+
+.plano-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.plano-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.plano-btn:hover { background: rgba(255,255,255,0.35); }
+
+.plano-map {
+  position: relative;
+  height: 380px;
+  background: #f5f0e8;
+  overflow: hidden;
+  touch-action: pan-x pan-y;
+}
+
+.plano-svg-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+
+.plano-info {
+  padding: 14px 16px;
+  background: var(--crema);
+}
+
+.plano-legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--texto-muted);
+  font-weight: 600;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+/* Plano SVG styles */
+.calle-principal { fill: #e8c97a; stroke: #c4a052; stroke-width: 1.5; }
+.calle-secundaria { fill: #f0e0b0; stroke: #d4b878; stroke-width: 0.8; }
+.zona-casetas { fill: #ffd8d8; stroke: #cc3344; stroke-width: 1; }
+.zona-verde { fill: #c8e8c0; stroke: #5a9a50; stroke-width: 0.8; }
+.portada { fill: var(--rojo); }
+.portada-label { fill: white; font-size: 9px; font-weight: bold; font-family: 'Nunito', sans-serif; }
+.calle-label { fill: #7a5c2e; font-size: 7px; font-family: 'Nunito', sans-serif; font-weight: 700; }
+.caseta-label { fill: #8b1020; font-size: 6px; font-family: 'Nunito', sans-serif; }
+.zona-label { fill: #333; font-size: 8px; font-family: 'Nunito', sans-serif; font-weight: 700; }
+
+.plano-zoom-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.zoom-btn {
+  flex: 1;
+  padding: 9px;
+  border: 2px solid var(--rojo);
+  background: white;
+  color: var(--rojo);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.zoom-btn:hover { background: var(--rojo); color: white; }
+
+/* ========== TV Y CÁMARAS ========== */
+.tv-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tv-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tv-card:active { transform: scale(0.98); }
+
+.tv-thumb {
+  position: relative;
+  background: #1a1a2e;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tv-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(181,0,30,0.3), rgba(245,200,0,0.1));
+}
+
+.tv-play-btn {
+  width: 56px;
+  height: 56px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+}
+
+.tv-card:hover .tv-play-btn { transform: scale(1.1); }
+
+.tv-live-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e00;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  animation: pulse-live 2s infinite;
+  z-index: 2;
+}
+
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.tv-channel-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border-radius: 8px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--rojo);
+  z-index: 2;
+}
+
+.tv-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.3) 0px,
+    rgba(255,255,255,0.3) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+.tv-info {
+  padding: 12px 16px 14px;
+  border-top: 3px solid var(--amarillo);
+}
+
+.tv-name {
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--texto);
+  margin-bottom: 4px;
+}
+
+.tv-desc {
+  font-size: 12.5px;
+  color: var(--texto-muted);
+  margin-bottom: 8px;
+}
+
+.tv-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tv-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.tag-tv { background: #fde8e8; color: var(--rojo); }
+.tag-camara { background: #e8eafd; color: #3344cc; }
+.tag-radio { background: #e8fdf0; color: var(--verde); }
+
+.tv-open-btn {
+  background: var(--rojo);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  transition: background 0.2s;
+}
+.tv-open-btn:hover { background: var(--rojo-dark); }
+
+/* Video modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--amarillo);
+}
+
+.modal-header {
+  background: var(--rojo);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  color: var(--amarillo);
+  font-family: 'Abril Fatface', serif;
+  font-size: 16px;
+}
+
+.modal-close {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.modal-video iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal-video-placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  gap: 12px;
+}
+
+.modal-video-placeholder .icon { font-size: 48px; }
+
+/* ========== INICIO / HOME ========== */
+.home-hero {
+  background: linear-gradient(135deg, var(--rojo) 0%, var(--rojo-dark) 100%);
+  border-radius: 18px;
+  padding: 22px 20px;
+  margin-bottom: 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero::before {
+  content: '🎡';
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.07;
+  right: -20px;
+  top: -10px;
+  transform: rotate(15deg);
+}
+
+.home-hero-farolillos {
+  font-size: 36px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.home-hero-farolillos span {
+  animation: mecerse 3s ease-in-out infinite;
+}
+.home-hero-farolillos span:nth-child(2) { animation-delay: 0.5s; }
+.home-hero-farolillos span:nth-child(3) { animation-delay: 1s; }
+.home-hero-farolillos span:nth-child(4) { animation-delay: 1.5s; }
+.home-hero-farolillos span:nth-child(5) { animation-delay: 2s; }
+
+.home-hero-title {
+  font-family: 'Abril Fatface', serif;
+  color: var(--amarillo);
+  font-size: 28px;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.5);
+  margin-bottom: 2px;
+}
+
+.home-hero-sub {
+  font-family: 'Dancing Script', cursive;
+  color: rgba(255,255,255,0.9);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.home-hero-dates {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--amarillo);
+  color: var(--rojo-dark);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 5px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.home-quick {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.quick-card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.18s, box-shadow 0.18s;
+  border-bottom: 4px solid var(--rojo);
+}
+
+.quick-card:hover, .quick-card:active {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+.quick-card.amarillo { border-bottom-color: var(--amarillo); }
+.quick-card.verde { border-bottom-color: var(--verde); }
+.quick-card.azul { border-bottom-color: #3355cc; }
+
+.quick-icon { font-size: 36px; margin-bottom: 8px; }
+.quick-label {
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--texto);
+}
+.quick-sub {
+  font-size: 11px;
+  color: var(--texto-muted);
+  margin-top: 2px;
+}
+
+.home-info-strip {
+  background: white;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  margin-bottom: 18px;
+}
+
+.info-strip-title {
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--rojo);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--gris);
+  font-size: 13px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-row-label { color: var(--texto-muted); font-weight: 600; }
+.info-row-value { font-weight: 800; color: var(--texto); }
+
+.home-tip {
+  background: linear-gradient(135deg, #fffbe6, #fff3cc);
+  border-radius: 14px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--amarillo);
+  font-size: 13px;
+  color: var(--texto);
+  line-height: 1.5;
+}
+.home-tip strong { color: var(--rojo-dark); }
+
+/* ========== FOOTER CREDIT ========== */
+.credit-bar {
+  background: var(--rojo-dark);
+  text-align: center;
+  padding: 6px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* ========== UTILITIES ========== */
+.count-badge {
+  background: var(--rojo);
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--texto-muted);
+}
+.empty-state .big { font-size: 56px; margin-bottom: 12px; }
+.empty-state p { font-size: 15px; font-weight: 600; }
+
+/* ========== RESPONSIVE HEIGHT ========== */
+@media (max-height: 700px) {
+  .plano-map { height: 300px; }
+  .tv-thumb { height: 130px; }
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="header-brand">
+        <div class="header-farolillo">🏮</div>
+        <div>
+          <div class="header-title">Feria de Sevilla</div>
+          <div class="header-subtitle">Real de la Maestranza · 2026</div>
+        </div>
+      </div>
+      <div class="header-year">2026</div>
+    </div>
+    <div style="text-align:center; margin-top:6px;">
+      <span class="header-fechas">🗓️ 28 ABR — 3 MAY · 2026</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showScreen('inicio')" id="btn-inicio">
+      <span class="nav-ico">🏠</span>INICIO
+    </button>
+    <button class="nav-btn" onclick="showScreen('casetas')" id="btn-casetas">
+      <span class="nav-ico">🎪</span>CASETAS
+    </button>
+    <button class="nav-btn" onclick="showScreen('plano')" id="btn-plano">
+      <span class="nav-ico">🗺️</span>PLANO
+    </button>
+    <button class="nav-btn" onclick="showScreen('tv')" id="btn-tv">
+      <span class="nav-ico">📺</span>TV/CAM
+    </button>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- ===== INICIO ===== -->
+    <div class="screen active" id="screen-inicio">
+      <div class="home-hero">
+        <div class="home-hero-farolillos">
+          <span>🏮</span><span>🏮</span><span>🏮</span><span>🏮</span><span>🏮</span>
+        </div>
+        <div class="home-hero-title">¡Que viva la Feria!</div>
+        <div class="home-hero-sub">Sevilla, corazón de Andalucía</div>
+        <div class="home-hero-dates">28 de Abril — 3 de Mayo de 2026</div>
+      </div>
+
+      <div class="home-quick">
+        <div class="quick-card" onclick="showScreen('casetas')">
+          <div class="quick-icon">🎪</div>
+          <div class="quick-label">Buscador</div>
+          <div class="quick-sub">Encuentra tu caseta</div>
+        </div>
+        <div class="quick-card amarillo" onclick="showScreen('plano')">
+          <div class="quick-icon">🗺️</div>
+          <div class="quick-label">Plano Feria</div>
+          <div class="quick-sub">Calles y zonas</div>
+        </div>
+        <div class="quick-card verde" onclick="showScreen('tv')">
+          <div class="quick-icon">📺</div>
+          <div class="quick-label">TV en Vivo</div>
+          <div class="quick-sub">Canal Sur y más</div>
+        </div>
+        <div class="quick-card azul" onclick="showScreen('tv'); setTimeout(()=>scrollToSection('camaras'),200)">
+          <div class="quick-icon">📷</div>
+          <div class="quick-label">Cámaras</div>
+          <div class="quick-sub">Portada y calles</div>
+        </div>
+      </div>
+
+      <div class="home-info-strip">
+        <div class="info-strip-title">🎡 Datos de la Feria</div>
+        <div class="info-row">
+          <span class="info-row-label">Apertura</span>
+          <span class="info-row-value">Martes 28 Abr · 00:00h</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Clausura</span>
+          <span class="info-row-value">Dom. 3 Mayo · Madrugada</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Recinto</span>
+          <span class="info-row-value">Real de la Maestranza</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Casetas</span>
+          <span class="info-row-value">~1.000 casetas</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Alumbrado</span>
+          <span class="info-row-value">Lunes 27 Abr · 00:00h</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Acceso</span>
+          <span class="info-row-value">Metro L1 · Prado de San Sebastián</span>
+        </div>
+      </div>
+
+      <div class="home-tip">
+        💡 <strong>Consejo:</strong> Las casetas municipales son de acceso libre. Para entrar en casetas privadas necesitas invitación de un socio. ¡La rebujina se toma frío y con hielo!
+      </div>
+
+      <div style="margin-top:14px; background:white; border-radius:14px; padding:14px 16px; box-shadow:0 2px 10px rgba(0,0,0,.07);">
+        <div class="info-strip-title">🎶 Horario Casetas</div>
+        <div class="info-row">
+          <span class="info-row-label">Apertura casetas</span>
+          <span class="info-row-value">12:00h</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Almuerzo / Tapas</span>
+          <span class="info-row-value">14:00 – 17:00h</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Siesta / Pausa</span>
+          <span class="info-row-value">17:00 – 20:00h</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Noche / Sevillanas</span>
+          <span class="info-row-value">20:00 – 06:00h</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CASETAS ===== -->
+    <div class="screen" id="screen-casetas">
+      <div class="section-title">
+        🎪 Buscador de Casetas
+        <span class="count-badge" id="count-badge">—</span>
+      </div>
+
+      <div class="search-box">
+        <input type="text" class="search-input" id="searchInput" placeholder="Buscar caseta, calle, entidad…" oninput="filterCasetas()" autocomplete="off">
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <div class="filter-pills" id="filterPills">
+        <div class="pill active" onclick="setFilter('todas', this)">Todas</div>
+        <div class="pill" onclick="setFilter('municipal', this)">Municipal</div>
+        <div class="pill" onclick="setFilter('publica', this)">Pública</div>
+        <div class="pill" onclick="setFilter('privada', this)">Privada</div>
+        <div class="pill" onclick="setFilter('peña', this)">Peña</div>
+        <div class="pill" onclick="setFilter('politica', this)">Política</div>
+        <div class="pill" onclick="setFilter('empresa', this)">Empresa</div>
+      </div>
+
+      <div class="casetas-list" id="casetasList"></div>
+    </div>
+
+    <!-- ===== PLANO ===== -->
+    <div class="screen" id="screen-plano">
+      <div class="section-title">🗺️ Plano del Real</div>
+
+      <div class="plano-container">
+        <div class="plano-header">
+          <h3>🏮 Real de la Maestranza · 2026</h3>
+          <div class="plano-controls">
+            <button class="plano-btn" onclick="resetZoom()" title="Centrar">⌖</button>
+          </div>
+        </div>
+        <div class="plano-map" id="planoMap">
+          <div class="plano-svg-wrap" id="planoSvgWrap">
+            <svg viewBox="0 0 500 460" width="500" height="460" xmlns="http://www.w3.org/2000/svg">
+              <!-- Fondo base -->
+              <rect width="500" height="460" fill="#f8f0d8"/>
+
+              <!-- Rio/límite -->
+              <rect x="0" y="0" width="500" height="460" fill="none" stroke="#c4a052" stroke-width="2"/>
+
+              <!-- Calles principales -->
+              <!-- Calle del Infierno (vertical izquierda) -->
+              <rect x="30" y="20" width="40" height="420" class="calle-principal"/>
+              <text x="50" y="230" transform="rotate(-90 50 230)" text-anchor="middle" class="calle-label">C. DEL INFIERNO</text>
+
+              <!-- Calles secundarias horizontales -->
+              <rect x="30" y="20" width="440" height="28" class="calle-principal"/>
+              <text x="250" y="38" text-anchor="middle" class="calle-label">PORTADA PRINCIPAL</text>
+
+              <!-- Calle Paralela 1 -->
+              <rect x="70" y="80" width="390" height="20" class="calle-secundaria"/>
+              <text x="265" y="94" text-anchor="middle" class="calle-label">CALLE MARQUÉS DE CONTADERO</text>
+
+              <!-- Calle Paralela 2 -->
+              <rect x="70" y="130" width="390" height="20" class="calle-secundaria"/>
+              <text x="265" y="144" text-anchor="middle" class="calle-label">CALLE REAL</text>
+
+              <!-- Calle Paralela 3 -->
+              <rect x="70" y="180" width="390" height="20" class="calle-secundaria"/>
+              <text x="265" y="194" text-anchor="middle" class="calle-label">CALLE ANTONIO BIENVENIDA</text>
+
+              <!-- Calle Paralela 4 -->
+              <rect x="70" y="230" width="390" height="20" class="calle-secundaria"/>
+              <text x="265" y="244" text-anchor="middle" class="calle-label">CALLE CAMINO VIEJO</text>
+
+              <!-- Calle Paralela 5 -->
+              <rect x="70" y="280" width="390" height="20" class="calle-secundaria"/>
+              <text x="265" y="294" text-anchor="middle" class="calle-label">CALLE NIÑO DIOS</text>
+
+              <!-- Calle Paralela 6 -->
+              <rect x="70" y="330" width="390" height="20" class="calle-secundaria"/>
+              <text x="265" y="344" text-anchor="middle" class="calle-label">CALLE CHICLANERA</text>
+
+              <!-- Calle Paralela 7 -->
+              <rect x="70" y="380" width="390" height="20" class="calle-secundaria"/>
+              <text x="265" y="394" text-anchor="middle" class="calle-label">CALLE PUNTA UMBRÍA</text>
+
+              <!-- Calles verticales divisorias -->
+              <rect x="140" y="48" width="14" height="400" fill="#f0e0b0" stroke="#d4b878" stroke-width="0.6"/>
+              <rect x="210" y="48" width="14" height="400" fill="#f0e0b0" stroke="#d4b878" stroke-width="0.6"/>
+              <rect x="280" y="48" width="14" height="400" fill="#f0e0b0" stroke="#d4b878" stroke-width="0.6"/>
+              <rect x="350" y="48" width="14" height="400" fill="#f0e0b0" stroke="#d4b878" stroke-width="0.6"/>
+              <rect x="420" y="48" width="14" height="400" fill="#f0e0b0" stroke="#d4b878" stroke-width="0.6"/>
+
+              <!-- ZONAS DE CASETAS (entre calles) -->
+              <!-- Zona A - entre portada y calle 1 -->
+              <rect x="154" y="50" width="56" height="28" class="zona-casetas" rx="2"/>
+              <text x="182" y="66" text-anchor="middle" class="caseta-label">ZONA A</text>
+
+              <rect x="224" y="50" width="56" height="28" class="zona-casetas" rx="2"/>
+              <text x="252" y="66" text-anchor="middle" class="caseta-label">ZONA B</text>
+
+              <rect x="294" y="50" width="56" height="28" class="zona-casetas" rx="2"/>
+              <text x="322" y="66" text-anchor="middle" class="caseta-label">ZONA C</text>
+
+              <rect x="364" y="50" width="56" height="28" class="zona-casetas" rx="2"/>
+              <text x="392" y="66" text-anchor="middle" class="caseta-label">ZONA D</text>
+
+              <!-- Entre calles 1 y 2 -->
+              <rect x="154" y="100" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="224" y="100" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="294" y="100" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="364" y="100" width="56" height="28" class="zona-casetas" rx="2"/>
+
+              <!-- Entre calles 2 y 3 -->
+              <rect x="154" y="150" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="224" y="150" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="294" y="150" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="364" y="150" width="56" height="28" class="zona-casetas" rx="2"/>
+
+              <!-- Entre calles 3 y 4 -->
+              <rect x="154" y="200" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="224" y="200" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="294" y="200" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="364" y="200" width="56" height="28" class="zona-casetas" rx="2"/>
+
+              <!-- Entre calles 4 y 5 -->
+              <rect x="154" y="250" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="224" y="250" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="294" y="250" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="364" y="250" width="56" height="28" class="zona-casetas" rx="2"/>
+
+              <!-- Entre calles 5 y 6 -->
+              <rect x="154" y="300" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="224" y="300" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="294" y="300" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="364" y="300" width="56" height="28" class="zona-casetas" rx="2"/>
+
+              <!-- Entre calles 6 y 7 -->
+              <rect x="154" y="350" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="224" y="350" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="294" y="350" width="56" height="28" class="zona-casetas" rx="2"/>
+              <rect x="364" y="350" width="56" height="28" class="zona-casetas" rx="2"/>
+
+              <!-- Después de calle 7 -->
+              <rect x="154" y="400" width="56" height="42" class="zona-verde" rx="2"/>
+              <rect x="224" y="400" width="56" height="42" class="zona-verde" rx="2"/>
+              <rect x="294" y="400" width="56" height="42" class="zona-verde" rx="2"/>
+              <rect x="364" y="400" width="56" height="42" class="zona-verde" rx="2"/>
+              <text x="270" y="425" text-anchor="middle" style="fill:#3a7a30; font-size:7px; font-family:'Nunito'; font-weight:700;">ZONA VERDE / DESCANSO</text>
+
+              <!-- PORTADA principal -->
+              <rect x="30" y="20" width="40" height="460" fill="none"/>
+              <rect x="0" y="185" width="30" height="130" rx="0" class="portada"/>
+              <text x="15" y="260" transform="rotate(-90 15 260)" text-anchor="middle" class="portada-label">PORTADA 2026</text>
+
+              <!-- Portadas laterales/secundarias -->
+              <ellipse cx="467" cy="250" rx="18" ry="22" fill="#B5001E" opacity="0.7"/>
+              <text x="467" y="254" text-anchor="middle" style="fill:white; font-size:6px; font-family:'Nunito'; font-weight:800;">P.LAT.</text>
+
+              <!-- Zona Infierno (atracciones) - lateral izquierdo arriba -->
+              <rect x="30" y="48" width="110" height="32" fill="#ffe0a0" stroke="#e0a030" stroke-width="1" rx="3"/>
+              <text x="85" y="68" text-anchor="middle" style="fill:#8b5000; font-size:7px; font-family:'Nunito'; font-weight:800;">🎡 ATRACCIONES</text>
+
+              <!-- Corrales de autos -->
+              <rect x="30" y="410" width="110" height="38" fill="#d0e8ff" stroke="#4488cc" stroke-width="1" rx="3"/>
+              <text x="85" y="432" text-anchor="middle" style="fill:#224488; font-size:7px; font-family:'Nunito'; font-weight:800;">🅿️ APARCAMIENTO</text>
+
+              <!-- Punto info -->
+              <circle cx="90" cy="22" r="8" fill="#ffffff" stroke="#B5001E" stroke-width="1.5"/>
+              <text x="90" y="26" text-anchor="middle" style="fill:#B5001E; font-size:8px; font-weight:800; font-family:'Nunito';">ℹ</text>
+
+              <!-- WC icons -->
+              <text x="85" y="315" text-anchor="middle" style="font-size:9px;">🚻</text>
+              <text x="260" y="315" text-anchor="middle" style="font-size:9px;">🚻</text>
+              <text x="410" y="315" text-anchor="middle" style="font-size:9px;">🚻</text>
+
+              <!-- Cruz roja / Primeros auxilios -->
+              <text x="440" y="140" text-anchor="middle" style="font-size:11px;">🏥</text>
+
+              <!-- Numeración de calles -->
+              <text x="20" y="90" text-anchor="middle" style="fill:#8b0020; font-size:8px; font-weight:800; font-family:'Nunito';">1</text>
+              <text x="20" y="140" text-anchor="middle" style="fill:#8b0020; font-size:8px; font-weight:800; font-family:'Nunito';">2</text>
+              <text x="20" y="190" text-anchor="middle" style="fill:#8b0020; font-size:8px; font-weight:800; font-family:'Nunito';">3</text>
+              <text x="20" y="240" text-anchor="middle" style="fill:#8b0020; font-size:8px; font-weight:800; font-family:'Nunito';">4</text>
+              <text x="20" y="290" text-anchor="middle" style="fill:#8b0020; font-size:8px; font-weight:800; font-family:'Nunito';">5</text>
+              <text x="20" y="340" text-anchor="middle" style="fill:#8b0020; font-size:8px; font-weight:800; font-family:'Nunito';">6</text>
+              <text x="20" y="390" text-anchor="middle" style="fill:#8b0020; font-size:8px; font-weight:800; font-family:'Nunito';">7</text>
+
+              <!-- Brújula -->
+              <g transform="translate(465, 430)">
+                <circle cx="0" cy="0" r="16" fill="white" stroke="#c4a052" stroke-width="1.5"/>
+                <text x="0" y="-5" text-anchor="middle" style="font-size:7px; font-weight:800; font-family:'Nunito'; fill:#B5001E;">N</text>
+                <text x="0" y="10" text-anchor="middle" style="font-size:6px; font-family:'Nunito'; fill:#888;">S</text>
+                <polygon points="0,-12 3,-2 0,-5 -3,-2" fill="#B5001E"/>
+                <polygon points="0,12 3,2 0,5 -3,2" fill="#888"/>
+              </g>
+
+              <!-- Escala -->
+              <line x1="150" y1="453" x2="220" y2="453" stroke="#888" stroke-width="1.5"/>
+              <line x1="150" y1="450" x2="150" y2="456" stroke="#888" stroke-width="1.5"/>
+              <line x1="220" y1="450" x2="220" y2="456" stroke="#888" stroke-width="1.5"/>
+              <text x="185" y="460" text-anchor="middle" style="font-size:6px; fill:#666; font-family:'Nunito';">~200m</text>
+            </svg>
+          </div>
+        </div>
+        <div class="plano-info">
+          <div style="font-size:12px; color:var(--texto-muted); margin-bottom:8px; font-weight:600;">
+            📍 Usa los botones para ampliar y desplazarte por el plano
+          </div>
+          <div class="plano-legend">
+            <span><span class="legend-dot" style="background:#ffd8d8; border:1px solid #cc3344;"></span>Casetas</span>
+            <span><span class="legend-dot" style="background:#e8c97a;"></span>Calle principal</span>
+            <span><span class="legend-dot" style="background:#c8e8c0;"></span>Zona verde</span>
+            <span><span class="legend-dot" style="background:#B5001E;"></span>Portada</span>
+          </div>
+          <div class="plano-zoom-btns">
+            <button class="zoom-btn" onclick="zoomPlano(1.3)">+</button>
+            <button class="zoom-btn" onclick="zoomPlano(0.77)">−</button>
+            <button class="zoom-btn" style="font-size:14px;" onclick="resetZoom()">↺ Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:white; border-radius:14px; padding:14px 16px; box-shadow:0 2px 10px rgba(0,0,0,.07);">
+        <div class="info-strip-title">🚇 Cómo llegar al Real</div>
+        <div class="info-row">
+          <span class="info-row-label">Metro L1</span>
+          <span class="info-row-value">Prado San Sebastián</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Bus</span>
+          <span class="info-row-value">C1, C2, 34, 37</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">A pie</span>
+          <span class="info-row-value">15 min desde centro</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Parking</span>
+          <span class="info-row-value">Los Remedios / Tablada</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TV / CÁMARAS ===== -->
+    <div class="screen" id="screen-tv">
+      <div class="section-title">📺 TV en Directo</div>
+
+      <div class="tv-grid" id="tv-section">
+
+        <!-- Canal Sur -->
+        <div class="tv-card" onclick="openStream('canalsur')">
+          <div class="tv-thumb">
+            <div class="tv-pattern"></div>
+            <div class="tv-live-badge">● EN VIVO</div>
+            <div class="tv-channel-logo">CANAL SUR</div>
+            <div class="tv-play-btn">▶</div>
+          </div>
+          <div class="tv-info">
+            <div class="tv-name">Canal Sur TV – Feria 2026</div>
+            <div class="tv-desc">Cobertura especial en directo: alumbrado, casetas y actuaciones</div>
+            <div class="tv-meta">
+              <span class="tv-tag tag-tv">📺 TV</span>
+              <button class="tv-open-btn" onclick="event.stopPropagation(); openStream('canalsur')">Ver ahora</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sevilla TV -->
+        <div class="tv-card" onclick="openStream('sevillatv')">
+          <div class="tv-thumb" style="background:#1a2840;">
+            <div class="tv-pattern"></div>
+            <div class="tv-live-badge">● EN VIVO</div>
+            <div class="tv-channel-logo" style="color:#3355cc;">SEVILLA TV</div>
+            <div class="tv-play-btn">▶</div>
+          </div>
+          <div class="tv-info">
+            <div class="tv-name">Sevilla TV – Directo Feria</div>
+            <div class="tv-desc">Seguimiento 24h del recinto ferial y actividades del día</div>
+            <div class="tv-meta">
+              <span class="tv-tag tag-tv">📺 TV</span>
+              <button class="tv-open-btn" onclick="event.stopPropagation(); openStream('sevillatv')">Ver ahora</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CÁMARAS -->
+      <div class="section-title" style="margin-top:22px;" id="camaras">📷 Cámaras en Directo</div>
+      <div style="background:rgba(181,0,30,0.07); border-radius:12px; padding:10px 14px; margin-bottom:14px; font-size:12.5px; color:var(--texto-muted); font-weight:600; border-left:3px solid var(--rojo);">
+        🔴 Cámaras del Ayuntamiento de Sevilla — retransmisión en directo durante los días de feria
+      </div>
+
+      <div class="tv-grid">
+
+        <!-- Cámara Portada -->
+        <div class="tv-card" onclick="openStream('portada')">
+          <div class="tv-thumb" style="background:#0d1a0d;">
+            <div class="tv-pattern" style="opacity:0.1;"></div>
+            <div class="tv-live-badge">● LIVE</div>
+            <div class="tv-channel-logo" style="color:var(--verde); font-size:10px; background:rgba(0,0,0,0.8);">📷 CAM</div>
+            <div style="position:absolute; bottom:10px; left:12px; color:rgba(255,255,255,0.7); font-size:11px; font-weight:700; z-index:2;">PORTADA PRINCIPAL</div>
+            <div class="tv-play-btn">📷</div>
+          </div>
+          <div class="tv-info">
+            <div class="tv-name">Cámara — Portada Principal 2026</div>
+            <div class="tv-desc">Vista directa de la portada iluminada del Real de la Maestranza</div>
+            <div class="tv-meta">
+              <span class="tv-tag tag-camara">📷 Cámara</span>
+              <button class="tv-open-btn" onclick="event.stopPropagation(); openStream('portada')">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cámara Calle Real -->
+        <div class="tv-card" onclick="openStream('callereal')">
+          <div class="tv-thumb" style="background:#1a1500;">
+            <div class="tv-pattern" style="opacity:0.1;"></div>
+            <div class="tv-live-badge">● LIVE</div>
+            <div class="tv-channel-logo" style="color:var(--amarillo); font-size:10px; background:rgba(0,0,0,0.8);">📷 CAM</div>
+            <div style="position:absolute; bottom:10px; left:12px; color:rgba(255,255,255,0.7); font-size:11px; font-weight:700; z-index:2;">CALLE REAL</div>
+            <div class="tv-play-btn">📷</div>
+          </div>
+          <div class="tv-info">
+            <div class="tv-name">Cámara — Calle Real</div>
+            <div class="tv-desc">La arteria principal del Real repleta de farolillos y movimiento</div>
+            <div class="tv-meta">
+              <span class="tv-tag tag-camara">📷 Cámara</span>
+              <button class="tv-open-btn" onclick="event.stopPropagation(); openStream('callereal')">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cámara Entrada -->
+        <div class="tv-card" onclick="openStream('entrada')">
+          <div class="tv-thumb" style="background:#0d0d1a;">
+            <div class="tv-pattern" style="opacity:0.1;"></div>
+            <div class="tv-live-badge">● LIVE</div>
+            <div class="tv-channel-logo" style="color:#aaaaff; font-size:10px; background:rgba(0,0,0,0.8);">📷 CAM</div>
+            <div style="position:absolute; bottom:10px; left:12px; color:rgba(255,255,255,0.7); font-size:11px; font-weight:700; z-index:2;">ACCESO NORTE</div>
+            <div class="tv-play-btn">📷</div>
+          </div>
+          <div class="tv-info">
+            <div class="tv-name">Cámara — Acceso Norte</div>
+            <div class="tv-desc">Entrada principal peatonal y control de aforo en tiempo real</div>
+            <div class="tv-meta">
+              <span class="tv-tag tag-camara">📷 Cámara</span>
+              <button class="tv-open-btn" onclick="event.stopPropagation(); openStream('entrada')">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radio Sevilla -->
+        <div class="tv-card" onclick="openStream('radio')">
+          <div class="tv-thumb" style="background:#003320; height:120px;">
+            <div class="tv-pattern" style="opacity:0.1;"></div>
+            <div class="tv-channel-logo" style="color:var(--verde);">RADIO</div>
+            <div style="font-size:48px; position:relative; z-index:1;">🎙️</div>
+          </div>
+          <div class="tv-info">
+            <div class="tv-name">Radio Sevilla — Feria en directo</div>
+            <div class="tv-desc">Sevillanas, información y crónica en directo desde el Real</div>
+            <div class="tv-meta">
+              <span class="tv-tag tag-radio">🎙️ Radio</span>
+              <button class="tv-open-btn" onclick="event.stopPropagation(); openStream('radio')">Escuchar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end .content -->
+
+  <div class="credit-bar">by Socram MASP · Feria de Abril Sevilla 2026</div>
+</div>
+
+<!-- MODAL REPRODUCTOR -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <span class="modal-title" id="modalTitle">Cargando…</span>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-video">
+      <div class="modal-video-placeholder" id="modalPlaceholder">
+        <div class="icon" id="modalIcon">📺</div>
+        <div id="modalMsg">Abriendo enlace externo…</div>
+        <button onclick="openExternal()" style="margin-top:12px; background:var(--amarillo); color:var(--rojo-dark); border:none; padding:10px 24px; border-radius:10px; font-weight:800; font-size:14px; cursor:pointer; font-family:'Nunito',sans-serif;">
+          🔗 Abrir en el navegador
+        </button>
+        <div style="margin-top:8px; font-size:11px; opacity:0.6;">Las cámaras y TV en directo se abren en el navegador</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===================== DATA =====================
+const CASETAS = [
+  // Municipales (acceso libre)
+  { nombre: "Caseta Municipal El Arenal", calle: "Calle Marqués de Contadero", tipo: "municipal", icono: "🏛️", num: "101" },
+  { nombre: "Caseta Municipal Los Remedios", calle: "Calle Real", tipo: "municipal", icono: "🏛️", num: "202" },
+  { nombre: "Caseta del Ayuntamiento de Sevilla", calle: "Calle Real", tipo: "municipal", icono: "🏛️", num: "203" },
+
+  // Públicas
+  { nombre: "Caseta de la Junta de Andalucía", calle: "Calle Antonio Bienvenida", tipo: "publica", icono: "🟢", num: "310" },
+  { nombre: "Caseta de la Diputación Provincial", calle: "Calle Antonio Bienvenida", tipo: "publica", icono: "🟢", num: "312" },
+  { nombre: "Caseta Universidad de Sevilla", calle: "Calle Camino Viejo", tipo: "publica", icono: "🎓", num: "401" },
+  { nombre: "Caseta del Colegio de Médicos", calle: "Calle Camino Viejo", tipo: "publica", icono: "⚕️", num: "402" },
+
+  // Políticas
+  { nombre: "Caseta PSOE Sevilla", calle: "Calle Real", tipo: "politica", icono: "🌹", num: "220" },
+  { nombre: "Caseta Partido Popular Sevilla", calle: "Calle Real", tipo: "politica", icono: "🔵", num: "221" },
+  { nombre: "Caseta Ciudadanos Sevilla", calle: "Calle Niño Dios", tipo: "politica", icono: "🟠", num: "511" },
+
+  // Peñas
+  { nombre: "Peña Flamenca Los Gallos", calle: "Calle Chiclanera", tipo: "peña", icono: "💃", num: "602" },
+  { nombre: "Peña Bética Los Verdiblancos", calle: "Calle Chiclanera", tipo: "peña", icono: "⚽", num: "604" },
+  { nombre: "Peña Sevillista El Cachorro", calle: "Calle Punta Umbría", tipo: "peña", icono: "⚽", num: "701" },
+  { nombre: "Peña Artística La Trianera", calle: "Calle Niño Dios", tipo: "peña", icono: "🎭", num: "505" },
+  { nombre: "Peña Gastronómica El Pescaíto", calle: "Calle Camino Viejo", tipo: "peña", icono: "🍤", num: "410" },
+
+  // Empresas
+  { nombre: "Caseta Grupo Cruzcampo", calle: "Calle Real", tipo: "empresa", icono: "🍺", num: "230" },
+  { nombre: "Caseta Banco Santander", calle: "Calle Marqués de Contadero", tipo: "empresa", icono: "🏦", num: "115" },
+  { nombre: "Caseta Telefónica", calle: "Calle Antonio Bienvenida", tipo: "empresa", icono: "📱", num: "320" },
+  { nombre: "Caseta Endesa", calle: "Calle Camino Viejo", tipo: "empresa", icono: "⚡", num: "420" },
+  { nombre: "Caseta Supermercados Día", calle: "Calle Chiclanera", tipo: "empresa", icono: "🛒", num: "610" },
+
+  // Privadas
+  { nombre: "Caseta La Giralda", calle: "Calle Marqués de Contadero", tipo: "privada", icono: "🔒", num: "120" },
+  { nombre: "Caseta El Aljarafe", calle: "Calle Antonio Bienvenida", tipo: "privada", icono: "🔒", num: "330" },
+  { nombre: "Caseta Los Remedios Club", calle: "Calle Camino Viejo", tipo: "privada", icono: "🔒", num: "430" },
+  { nombre: "Caseta La Maestranza Elite", calle: "Calle Niño Dios", tipo: "privada", icono: "🔒", num: "520" },
+  { nombre: "Caseta Triana Social", calle: "Calle Punta Umbría", tipo: "privada", icono: "🔒", num: "710" },
+  { nombre: "Caseta El Rocío 2026", calle: "Calle Punta Umbría", tipo: "privada", icono: "🔒", num: "712" },
+  { nombre: "Caseta Antigua Bodega", calle: "Calle Chiclanera", tipo: "privada", icono: "🔒", num: "615" },
+  { nombre: "Caseta Los Indianos", calle: "Calle Marqués de Contadero", tipo: "privada", icono: "🔒", num: "130" },
+];
+
+const STREAM_LINKS = {
+  canalsur: { url: "https://www.canalsur.es/television/directo.html", title: "Canal Sur TV · En Directo", icon: "📺" },
+  sevillatv: { url: "https://www.sevillatv.es/directo", title: "Sevilla TV · En Directo", icon: "📺" },
+  portada: { url: "https://trafico.sevilla.org/camaras", title: "Cámara — Portada Principal", icon: "📷" },
+  callereal: { url: "https://trafico.sevilla.org/camaras", title: "Cámara — Calle Real", icon: "📷" },
+  entrada: { url: "https://trafico.sevilla.org/camaras", title: "Cámara — Acceso Norte", icon: "📷" },
+  radio: { url: "https://www.radiosevilla.es/directo", title: "Radio Sevilla · Feria en Directo", icon: "🎙️" },
+};
+
+// ===================== STATE =====================
+let currentFilter = 'todas';
+let currentStream = null;
+let planoScale = 1;
+
+// ===================== NAV =====================
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('screen-' + id).classList.add('active');
+  document.getElementById('btn-' + id).classList.add('active');
+  if (id === 'casetas') renderCasetas();
+}
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ===================== CASETAS =====================
+function renderCasetas() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const list = document.getElementById('casetasList');
+  const badge = document.getElementById('count-badge');
+
+  let filtered = CASETAS.filter(c => {
+    const matchFilter = currentFilter === 'todas' || c.tipo === currentFilter;
+    const matchQ = !q || c.nombre.toLowerCase().includes(q) || c.calle.toLowerCase().includes(q) || c.tipo.toLowerCase().includes(q);
+    return matchFilter && matchQ;
+  });
+
+  badge.textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    list.innerHTML = `<div class="no-results"><div class="no-icon">🔍</div><p>No se encontraron casetas</p><p style="font-size:12px;margin-top:6px;">Prueba otra búsqueda o filtro</p></div>`;
+    return;
+  }
+
+  list.innerHTML = filtered.map(c => `
+    <div class="caseta-card ${c.tipo}">
+      <div class="caseta-emoji">${c.icono}</div>
+      <div class="caseta-info">
+        <div class="caseta-nombre">${c.nombre}</div>
+        <div class="caseta-meta">
+          <span>📍 ${c.calle}</span>
+          <span>Nº ${c.num}</span>
+        </div>
+      </div>
+      <span class="caseta-badge badge-${c.tipo}">${c.tipo}</span>
+    </div>
+  `).join('');
+}
+
+function filterCasetas() { renderCasetas(); }
+
+function setFilter(tipo, el) {
+  currentFilter = tipo;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  renderCasetas();
+}
+
+// ===================== PLANO ZOOM =====================
+function zoomPlano(factor) {
+  planoScale = Math.min(4, Math.max(0.5, planoScale * factor));
+  document.getElementById('planoSvgWrap').style.transform = `scale(${planoScale})`;
+}
+
+function resetZoom() {
+  planoScale = 1;
+  document.getElementById('planoSvgWrap').style.transform = 'scale(1)';
+}
+
+// ===================== STREAM / MODAL =====================
+function openStream(key) {
+  currentStream = STREAM_LINKS[key];
+  document.getElementById('modalTitle').textContent = currentStream.title;
+  document.getElementById('modalIcon').textContent = currentStream.icon;
+  document.getElementById('modalMsg').textContent = 'Las retransmisiones se abren en el navegador externo';
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function openExternal() {
+  if (currentStream) window.open(currentStream.url, '_blank');
+  closeModal();
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+}
+
+// ===================== INIT =====================
+document.addEventListener('DOMContentLoaded', () => {
+  renderCasetas();
+});
+</script>
+</body>
+</html>
