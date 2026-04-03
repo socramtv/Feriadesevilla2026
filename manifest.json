@@ -1,0 +1,16 @@
+{
+  "name": "Feria de Abril Sevilla 2026",
+  "short_name": "Feria Sevilla",
+  "description": "Guía completa de la Feria de Abril de Sevilla 2026. Casetas, plano, TV en directo y más.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#7A0015",
+  "theme_color": "#B5001E",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["travel", "entertainment"],
+  "lang": "es"
+}
