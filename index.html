@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Feria de Abril Sevilla 2026</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Feria Sevilla">
+<meta name="theme-color" content="#B5001E">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Guia oficial Feria de Abril Sevilla 2026.">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+<style>*{box-sizing:border-box;margin:0;padding:0;}
+:root{--r:#B5001E;--rd:#7A0015;--y:#F5C800;--g:#006B3C;--c:#FFF3D6;--gr:#F0EBE0;--t:#1A0A00;--tm:#6B4C30;--sh:rgba(181,0,30,.15);}
+html,body{height:100%;background:var(--rd);font-family:'Nunito',sans-serif;overflow:hidden;}
+.app{max-width:430px;width:100%;height:100vh;margin:0 auto;background:var(--c);display:flex;flex-direction:column;overflow:hidden;}
+.hdr{background:var(--r);padding:10px 14px 8px;flex-shrink:0;position:relative;overflow:hidden;}
+.hdr::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 18px,rgba(255,255,255,.04) 18px,rgba(255,255,255,.04) 20px);pointer-events:none;}
+.hdr-row{display:flex;align-items:center;justify-content:space-between;}
+.hdr-brand{display:flex;align-items:center;gap:8px;}
+.hdr-ico{font-size:24px;animation:swing 3s ease-in-out infinite;}
+@keyframes swing{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
+.hdr-title{font-family:'Abril Fatface',serif;color:var(--y);font-size:20px;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,.5);}
+.hdr-sub{font-family:'Dancing Script',cursive;color:rgba(255,255,255,.85);font-size:12px;font-weight:700;}
+.hdr-year{background:var(--y);color:var(--rd);font-family:'Abril Fatface',serif;font-size:18px;padding:3px 10px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,.3);}
+.hdr-dates{text-align:center;color:rgba(255,255,255,.9);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;background:rgba(0,0,0,.2);border-radius:20px;padding:3px 10px;display:inline-block;margin-top:4px;}
+.tab-nav{background:var(--rd);display:flex;justify-content:center;flex-shrink:0;overflow-x:auto;scrollbar-width:none;border-bottom:2px solid var(--y);padding:0 4px;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{flex-shrink:0;border:none;background:transparent;color:rgba(255,255,255,.55);font-family:'Nunito',sans-serif;font-size:9px;font-weight:800;padding:8px 10px 6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:all .2s;text-transform:uppercase;letter-spacing:.4px;position:relative;white-space:nowrap;}
+.tab-btn .ico{font-size:19px;line-height:1;}
+.tab-btn.active{color:var(--y);background:rgba(245,200,0,.1);}
+.tab-btn.active::after{content:'';position:absolute;bottom:-2px;left:15%;right:15%;height:2px;background:var(--y);border-radius:2px 2px 0 0;}
+.install-bar{background:linear-gradient(90deg,var(--rd),#9a0018);padding:6px 14px;flex-shrink:0;display:none;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid rgba(245,200,0,.3);}
+.install-bar.show{display:flex;}
+.install-btn{background:var(--y);color:var(--rd);border:none;padding:6px 14px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:900;cursor:pointer;flex-shrink:0;}
+.install-bar-txt{font-size:11px;color:rgba(255,255,255,.85);font-weight:700;flex:1;}
+.install-bar-x{background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:pointer;padding:0 2px;}
+.update-bar{background:linear-gradient(90deg,#073a15,#0a5c20);padding:6px 14px;flex-shrink:0;display:none;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid rgba(100,255,150,.3);}
+.update-bar.show{display:flex;}
+.update-btn{background:#00cc55;color:#fff;border:none;padding:6px 14px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:900;cursor:pointer;flex-shrink:0;}
+.update-bar-txt{font-size:11px;color:rgba(255,255,255,.9);font-weight:700;flex:1;}
+.content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+.content::-webkit-scrollbar{width:3px;}
+.content::-webkit-scrollbar-thumb{background:var(--r);border-radius:2px;}
+.screen{display:none;min-height:100%;animation:fi .2s ease;}
+.screen.active{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
+#s-inicio{padding:0;}
+.inicio-hero{position:relative;height:230px;background:linear-gradient(160deg,var(--r),var(--rd));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 16px;overflow:hidden;}
+.inicio-hero-bg{position:absolute;inset:0;background:url('https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/portada.jpg') center/cover no-repeat;opacity:.3;}
+.inicio-hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(122,0,21,.4),rgba(122,0,21,.85));}
+.inicio-hero>*:not(.inicio-hero-bg):not(.inicio-hero-ov){position:relative;z-index:1;}
+.hero-lights{font-size:28px;display:flex;justify-content:center;gap:4px;margin-bottom:6px;}
+.hero-lights span{animation:swing 3s ease-in-out infinite;}
+.hero-lights span:nth-child(2){animation-delay:.4s;}.hero-lights span:nth-child(3){animation-delay:.8s;}.hero-lights span:nth-child(4){animation-delay:1.2s;}.hero-lights span:nth-child(5){animation-delay:1.6s;}
+.hero-t{font-family:'Abril Fatface',serif;color:var(--y);font-size:28px;line-height:1.1;text-shadow:0 3px 14px rgba(0,0,0,.7);margin-bottom:3px;}
+.hero-s{font-family:'Dancing Script',cursive;color:rgba(255,255,255,.95);font-size:15px;font-weight:700;}
+.hero-d{display:inline-block;margin-top:10px;background:var(--y);color:var(--rd);font-weight:900;font-size:12px;padding:5px 16px;border-radius:20px;}
+.inicio-body{padding:14px;}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.quick-card{background:#fff;border-radius:14px;padding:14px 10px;text-align:center;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:.18s;border-bottom:4px solid var(--r);}
+.quick-card:active{transform:translateY(-2px);}
+.quick-card.y{border-bottom-color:var(--y);}.quick-card.g{border-bottom-color:var(--g);}.quick-card.b{border-bottom-color:#3355cc;}.quick-card.p{border-bottom-color:#8833cc;}.quick-card.o{border-bottom-color:#e05500;}
+.quick-ico{font-size:30px;margin-bottom:6px;height:36px;display:flex;align-items:center;justify-content:center;}
+.quick-ico img{width:30px;height:30px;object-fit:contain;}
+.quick-lbl{font-weight:800;font-size:12px;color:var(--t);}
+.quick-sub{font-size:10px;color:var(--tm);margin-top:2px;}
+.info-card{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:14px;}
+.info-card-title{font-weight:800;font-size:12px;color:var(--r);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--gr);font-size:12.5px;}
+.info-row:last-child{border-bottom:none;}
+.ir-lbl{color:var(--tm);font-weight:600;}.ir-val{font-weight:800;color:var(--t);text-align:right;}
+.tip-box{background:linear-gradient(135deg,#fffbe6,#fff3cc);border-radius:12px;padding:12px 14px;border-left:4px solid var(--y);font-size:12.5px;color:var(--t);line-height:1.5;margin-bottom:14px;}
+.screen-pad{padding:14px;}
+.sec-title{font-family:'Abril Fatface',serif;color:var(--r);font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.badge-count{background:var(--r);color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:10px;font-family:'Nunito',sans-serif;}
+.search-wrap{position:relative;margin-bottom:12px;}
+.search-inp{width:100%;padding:12px 44px 12px 14px;border:2px solid var(--r);border-radius:12px;background:#fff;font-family:'Nunito',sans-serif;font-size:14px;color:var(--t);outline:none;transition:.2s;}
+.search-inp:focus{border-color:var(--y);box-shadow:0 0 0 3px rgba(245,200,0,.2);}
+.search-ico{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none;}
+.pills{display:flex;gap:7px;margin-bottom:12px;overflow-x:auto;padding-bottom:3px;scrollbar-width:none;}
+.pills::-webkit-scrollbar{display:none;}
+.pill{flex-shrink:0;padding:5px 12px;border-radius:20px;border:2px solid var(--r);background:#fff;color:var(--r);font-size:11px;font-weight:800;cursor:pointer;transition:.2s;font-family:'Nunito',sans-serif;}
+.pill.active,.pill:hover{background:var(--r);color:#fff;}
+.caseta-list{display:flex;flex-direction:column;gap:9px;}
+.caseta-card{background:#fff;border-radius:12px;padding:11px 13px;border-left:4px solid var(--r);box-shadow:0 2px 10px var(--sh);display:flex;align-items:center;gap:11px;transition:.18s;}
+.caseta-card:active{transform:translateY(-1px);}
+.caseta-card.pub{border-left-color:var(--g);}
+.caseta-ico{flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;}
+.caseta-ico img{width:30px;height:30px;object-fit:contain;}
+.caseta-info{flex:1;min-width:0;}
+.caseta-name{font-weight:800;font-size:13px;color:var(--t);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.caseta-meta{font-size:11px;color:var(--tm);display:flex;gap:8px;flex-wrap:wrap;}
+.caseta-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;}
+.badge{font-size:9px;font-weight:800;padding:2px 7px;border-radius:7px;text-transform:uppercase;}
+.badge-pub{background:#e6f9ef;color:var(--g);}.badge-priv{background:#f0f0f0;color:#666;}
+.fav-btn{background:none;border:none;font-size:18px;cursor:pointer;padding:0;line-height:1;}
+.map-btn{background:var(--r);color:#fff;border:none;padding:5px 9px;border-radius:7px;font-size:10px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;}
+.loading-box{text-align:center;padding:40px 20px;color:var(--tm);}
+.atrac-list{display:flex;flex-direction:column;gap:9px;}
+.atrac-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);display:flex;align-items:center;cursor:pointer;transition:.18s;}
+.atrac-card:active{transform:scale(.99);}
+.atrac-img-wrap{width:78px;height:70px;flex-shrink:0;background:#f0e8d0;overflow:hidden;}
+.atrac-img{width:78px;height:70px;object-fit:cover;display:block;}
+.atrac-body{padding:10px 12px;flex:1;min-width:0;}
+.atrac-name{font-weight:800;font-size:13px;color:var(--t);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.atrac-price{font-size:12px;color:var(--tm);font-weight:600;}
+.atrac-badge{font-size:9px;font-weight:800;padding:2px 8px;border-radius:7px;margin-top:4px;display:inline-block;}
+.badge-adult{background:#fff0d0;color:#8B4500;}.badge-child{background:#d0f0ff;color:#005580;}
+.plano-box{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px var(--sh);margin-bottom:14px;}
+.plano-hdr{background:var(--r);padding:10px 14px;}
+.plano-hdr h3{color:var(--y);font-family:'Abril Fatface',serif;font-size:15px;}
+.plano-map{position:relative;height:340px;overflow:hidden;touch-action:none;background:#f5ead5;cursor:grab;}
+.plano-map:active{cursor:grabbing;}
+.plano-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transform-origin:center;will-change:transform;}
+.plano-img{max-width:100%;max-height:100%;user-select:none;-webkit-user-drag:none;display:block;}
+.plano-zoom-row{display:flex;gap:8px;padding:10px 12px;}
+.zbtn{flex:1;padding:8px;border:2px solid var(--r);background:#fff;color:var(--r);border-radius:9px;font-size:18px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;}
+.zbtn:hover{background:var(--r);color:#fff;}
+.tv-grid{display:flex;flex-direction:column;gap:12px;}
+.tv-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.1);cursor:pointer;transition:.2s;}
+.tv-card:active{transform:scale(.99);}
+.tv-thumb{position:relative;background:#1a1a2e;height:128px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.tv-thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(181,0,30,.35),rgba(245,200,0,.1));}
+.tv-scanlines{position:absolute;inset:0;opacity:.1;background:repeating-linear-gradient(0deg,rgba(255,255,255,.3) 0,rgba(255,255,255,.3) 1px,transparent 1px,transparent 3px);}
+.tv-live-badge{position:absolute;top:8px;left:9px;background:#e00;color:#fff;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;letter-spacing:1px;animation:blink 2s infinite;z-index:2;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.5;}}
+.tv-logo{position:absolute;top:8px;right:9px;background:#fff;border-radius:6px;padding:2px 8px;font-size:10px;font-weight:800;color:var(--r);z-index:2;}
+.tv-play{width:48px;height:48px;background:rgba(255,255,255,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;position:relative;z-index:1;box-shadow:0 4px 18px rgba(0,0,0,.4);}
+.tv-info{padding:10px 14px 12px;border-top:3px solid var(--y);}
+.tv-name{font-weight:800;font-size:14px;color:var(--t);margin-bottom:3px;}
+.tv-desc{font-size:12px;color:var(--tm);margin-bottom:7px;}
+.tv-row{display:flex;justify-content:space-between;align-items:center;}
+.tv-tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:7px;text-transform:uppercase;}
+.tag-tv{background:#fde8e8;color:var(--r);}.tag-cam{background:#e8eafd;color:#3344cc;}
+.open-btn{background:var(--r);color:#fff;border:none;padding:5px 12px;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;}
+.cam-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.1);margin-bottom:12px;}
+.cam-wrap{position:relative;background:#111;height:165px;display:flex;align-items:center;justify-content:center;}
+.cam-img{width:100%;height:100%;object-fit:cover;display:none;}
+.cam-img.ok{display:block;}
+.cam-err{display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.5);font-size:12px;font-weight:600;}
+.cam-err-ico{font-size:32px;}
+.cam-live-badge{position:absolute;top:8px;left:9px;background:#e00;color:#fff;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;letter-spacing:1px;animation:blink 2s infinite;z-index:2;}
+.cam-ts{position:absolute;bottom:7px;right:9px;background:rgba(0,0,0,.65);color:rgba(255,255,255,.8);font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;z-index:2;}
+.cam-refresh-btn{position:absolute;bottom:7px;left:9px;background:rgba(0,0,0,.65);color:#fff;border:none;padding:4px 10px;border-radius:7px;font-size:10px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;z-index:2;}
+.cam-info{padding:10px 14px 12px;border-top:3px solid var(--y);}
+.cam-name{font-weight:800;font-size:14px;color:var(--t);margin-bottom:3px;}
+.cam-desc{font-size:12px;color:var(--tm);margin-bottom:7px;}
+.cam-row{display:flex;justify-content:space-between;align-items:center;}
+.ubic-hero{background:linear-gradient(135deg,#0d1a30,#1a2a4a);border-radius:16px;padding:18px;text-align:center;margin-bottom:14px;}
+.ubic-title{font-family:'Abril Fatface',serif;color:#7ec8f8;font-size:19px;margin-bottom:4px;}
+.ubic-sub{color:rgba(255,255,255,.7);font-size:12px;line-height:1.4;}
+.ubic-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.ubic-btn{padding:13px 8px;border-radius:14px;border:none;font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;cursor:pointer;transition:.2s;display:flex;flex-direction:column;align-items:center;gap:5px;}
+.ubic-btn .ub-ico{font-size:24px;}
+.ubic-btn.save{background:var(--g);color:#fff;}.ubic-btn.nav{background:var(--r);color:#fff;}.ubic-btn.share{background:#0066cc;color:#fff;}.ubic-btn.del{background:#888;color:#fff;}
+.ubic-btn:disabled{background:#ccc!important;color:#888!important;cursor:not-allowed;}
+.ubic-status{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 10px rgba(0,0,0,.07);text-align:center;margin-bottom:14px;}
+.ubic-status-icon{font-size:34px;margin-bottom:6px;}
+.ubic-status-text{font-size:13px;color:var(--tm);font-weight:600;line-height:1.5;}
+.ubic-status-coord{font-size:11px;color:var(--r);font-weight:700;margin-top:4px;}
+.poi-list{display:flex;flex-direction:column;gap:9px;}
+.poi-card{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 10px rgba(0,0,0,.07);display:flex;align-items:center;gap:12px;transition:.18s;}
+.poi-card:active{transform:translateY(-1px);}
+.poi-ico{font-size:26px;flex-shrink:0;width:30px;text-align:center;}
+.poi-info{flex:1;}
+.poi-name{font-weight:800;font-size:13px;color:var(--t);margin-bottom:2px;}
+.poi-desc{font-size:11px;color:var(--tm);}
+.poi-dist{font-size:10px;background:var(--gr);padding:2px 8px;border-radius:7px;font-weight:700;color:var(--tm);margin-top:3px;display:inline-block;}
+.tel-link{color:var(--r);font-weight:800;text-decoration:none;font-size:12px;display:block;margin-top:4px;}
+.player-overlay{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:1000;display:none;flex-direction:column;align-items:center;justify-content:center;padding:16px;}
+.player-overlay.open{display:flex;}
+.player-box{width:100%;max-width:420px;background:#0d0d0d;border-radius:14px;overflow:hidden;border:2px solid var(--y);}
+.player-hdr{background:var(--r);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;}
+.player-title{color:var(--y);font-family:'Abril Fatface',serif;font-size:15px;overflow:hidden;text-overflow:ellipsis;max-width:280px;}
+.player-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:30px;height:30px;border-radius:7px;font-size:16px;cursor:pointer;}
+video{width:100%;display:block;max-height:280px;background:#000;}
+.player-status{padding:10px 14px;font-size:12px;color:rgba(255,255,255,.6);text-align:center;}
+.bot-nav{background:var(--rd);display:flex;border-top:2px solid var(--y);flex-shrink:0;}
+.bot-btn{flex:1;border:none;background:transparent;color:rgba(255,255,255,.55);font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;padding:9px 4px 7px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;transition:.2s;text-transform:uppercase;letter-spacing:.4px;position:relative;}
+.bot-btn .ico{font-size:22px;}
+.bot-btn.active{color:var(--y);}
+.bot-btn.active::before{content:'';position:absolute;top:-2px;left:22%;right:22%;height:2px;background:var(--y);border-radius:0 0 2px 2px;}
+.fav-dot{position:absolute;top:5px;right:calc(50% - 22px);background:var(--r);color:#fff;font-size:9px;font-weight:800;width:16px;height:16px;border-radius:50%;display:none;align-items:center;justify-content:center;}
+.toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%) translateY(20px);background:#222;color:#fff;padding:9px 20px;border-radius:20px;font-size:13px;font-weight:700;z-index:2000;opacity:0;transition:.3s;pointer-events:none;white-space:nowrap;max-width:92vw;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.empty{text-align:center;padding:40px 20px;color:var(--tm);}
+.empty .e-ico{font-size:48px;margin-bottom:10px;}
+.empty p{font-size:14px;font-weight:600;}
+.credit{background:var(--rd);text-align:center;padding:4px;font-size:10px;color:rgba(255,255,255,.4);font-weight:600;flex-shrink:0;}
+@media(max-height:700px){.plano-map{height:260px;}.tv-thumb{height:100px;}.inicio-hero{height:180px;}}</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="hdr">
+    <div class="hdr-row">
+      <div class="hdr-brand">
+        <div class="hdr-ico">&#x1F483;</div>
+        <div>
+          <div class="hdr-title">Feria de Sevilla</div>
+          <div class="hdr-sub">Real de la Maestranza &middot; 2026</div>
+        </div>
+      </div>
+      <div class="hdr-year">2026</div>
+    </div>
+    <div style="text-align:center;margin-top:5px;">
+      <span class="hdr-dates">&#x1F5D3; 21 &mdash; 26 de Abril &middot; 2026</span>
+    </div>
+  </div>
+
+  <nav class="tab-nav">
+    <button class="tab-btn" onclick="goTab('inicio')" id="t-inicio">
+      <span class="ico">&#x1F3E0;</span>INICIO</button>
+    <button class="tab-btn active" onclick="goTab('casetas')" id="t-casetas">
+      <span class="ico"><img src="https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/caseta.svg" width="19" height="19" alt="" onerror="this.outerHTML='&#x1F3AA;'"></span>CASETAS</button>
+    <button class="tab-btn" onclick="goTab('atracciones')" id="t-atracciones">
+      <span class="ico">&#x1F3A1;</span>ATRACC.</button>
+    <button class="tab-btn" onclick="goTab('plano')" id="t-plano">
+      <span class="ico">&#x1F5FA;</span>PLANO</button>
+    <button class="tab-btn" onclick="goTab('tv')" id="t-tv">
+      <span class="ico">&#x1F4FA;</span>TV/CAM</button>
+    <button class="tab-btn" onclick="goTab('ubicacion')" id="t-ubicacion">
+      <span class="ico">&#x1F4CD;</span>UBICAC.</button>
+    <button class="tab-btn" onclick="goTab('poi')" id="t-poi">
+      <span class="ico">&#x2139;</span>PUNTOS</button>
+  </nav>
+
+  <div class="install-bar" id="installBar">
+    <span class="install-bar-txt">&#x1F4F2; Instala la app en tu m&oacute;vil</span>
+    <button class="install-btn" onclick="doInstall()">&#x2B07; Instalar</button>
+    <button class="install-bar-x" onclick="document.getElementById('installBar').classList.remove('show')">&#x2715;</button>
+  </div>
+
+  <div class="update-bar" id="updateBar">
+    <span class="update-bar-txt">&#x1F504; Nueva versi&oacute;n disponible</span>
+    <button class="update-btn" onclick="doUpdate()">Actualizar ahora</button>
+    <button class="install-bar-x" onclick="document.getElementById('updateBar').classList.remove('show')">&#x2715;</button>
+  </div>
+
+  <div class="content">
+
+    <!-- INICIO -->
+    <div class="screen" id="s-inicio">
+      <div class="inicio-hero">
+        <div class="inicio-hero-bg"></div>
+        <div class="inicio-hero-ov"></div>
+        <div class="hero-lights"><span>&#x1F3EE;</span><span>&#x1FAAD;</span><span>&#x1F3EE;</span><span>&#x1FAAD;</span><span>&#x1F3EE;</span></div>
+        <div class="hero-t">&iexcl;Que viva la Feria!</div>
+        <div class="hero-s">Sevilla, coraz&oacute;n de Andaluc&iacute;a</div>
+        <div class="hero-d">21 &mdash; 26 de Abril de 2026</div>
+      </div>
+      <div class="inicio-body">
+        <div class="quick-grid">
+          <div class="quick-card" onclick="goTab('casetas')">
+            <div class="quick-ico"><img src="https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/caseta.svg" width="30" height="30" alt="" onerror="this.outerHTML='&#x1F3AA;'"></div>
+            <div class="quick-lbl">Buscador</div><div class="quick-sub">Encuentra tu caseta</div>
+          </div>
+          <div class="quick-card y" onclick="goTab('plano')">
+            <div class="quick-ico">&#x1F5FA;</div>
+            <div class="quick-lbl">Plano Feria</div><div class="quick-sub">Calles y zonas</div>
+          </div>
+          <div class="quick-card g" onclick="goTab('tv')">
+            <div class="quick-ico">&#x1F4FA;</div>
+            <div class="quick-lbl">TV en Vivo</div><div class="quick-sub">7TV, PTV, Canal Sur</div>
+          </div>
+          <div class="quick-card b" onclick="goTab('tv');setTimeout(scrollToCams,200)">
+            <div class="quick-ico">&#x1F4F7;</div>
+            <div class="quick-lbl">C&aacute;maras</div><div class="quick-sub">Portada y calles</div>
+          </div>
+          <div class="quick-card p" onclick="goTab('atracciones')">
+            <div class="quick-ico">&#x1F3A1;</div>
+            <div class="quick-lbl">Atracciones</div><div class="quick-sub">El Infierno</div>
+          </div>
+          <div class="quick-card o" onclick="goTab('ubicacion')">
+            <div class="quick-ico">&#x1F4CD;</div>
+            <div class="quick-lbl">Mi Ubicaci&oacute;n</div><div class="quick-sub">Guarda y comparte</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">&#x1F3A1; Datos de la Feria</div>
+        <div class="info-row"><span class="ir-lbl">Alumbrado</span><span class="ir-val">Noche del Lunes 20 al Martes 21 &middot; 00:00h</span></div>
+<div class="info-row"><span class="ir-lbl">Apertura</span><span class="ir-val">Martes 21 Abr &middot; 12:00h</span></div>
+<div class="info-row"><span class="ir-lbl">Festivo Local</span><span class="ir-val">Mi&eacute;rcoles 22 Abr</span></div>
+<div class="info-row"><span class="ir-lbl">Clausura</span><span class="ir-val">Dom. 26 Abr &middot; madrugada</span></div>
+<div class="info-row"><span class="ir-lbl">Paseo de Caballos</span><span class="ir-val">12:00h a 19:00h</span></div>
+<div class="info-row"><span class="ir-lbl">Calle del Infierno</span><span class="ir-val">11:00h a 06:00h (Dom. hasta 01:00h)</span></div>
+<div class="info-row"><span class="ir-lbl">Recinto</span><span class="ir-val">Real de la Maestranza</span></div>
+<div class="info-row"><span class="ir-lbl">Metro</span><span class="ir-val">L1 &middot; Prado San Sebasti&aacute;n</span></div>
+
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">&#x1F3B6; Horario casetas</div>
+          <div class="info-row"><span class="ir-lbl">Apertura</span><span class="ir-val">12:00h</span></div>
+          <div class="info-row"><span class="ir-lbl">Almuerzo / Tapas</span><span class="ir-val">14:00 &ndash; 17:00h</span></div>
+          <div class="info-row"><span class="ir-lbl">Noche / Sevillanas</span><span class="ir-val">20:00 &ndash; 03:00h</span></div>
+        </div>
+        <div class="tip-box">&#x1F4A1; <strong>Consejo:</strong> Las casetas municipales son de acceso libre. El rebujito se toma bien fr&iacute;o con hielo. &iexcl;Ole!</div>
+      </div>
+    </div>
+
+    <!-- CASETAS -->
+    <div class="screen active" id="s-casetas">
+      <div class="screen-pad">
+        <div class="sec-title">
+          <img src="https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/caseta.svg" width="22" height="22" alt="" onerror="this.outerHTML='&#x1F3AA;'">
+          Casetas <span class="badge-count" id="cnt-cas">&mdash;</span>
+        </div>
+        <div class="search-wrap">
+          <input class="search-inp" id="cas-q" type="text" placeholder="Buscar caseta o nombre&hellip;" oninput="renderCasetas()" autocomplete="off">
+          <span class="search-ico">&#x1F50D;</span>
+        </div>
+        <div class="pills" id="cas-calle-pills"><div class="pill active" onclick="setCalle('',this)">Todas</div></div>
+        <div class="pills">
+          <div class="pill active" onclick="setAcceso('todas',this)" id="pa-todas">Todas</div>
+          <div class="pill" onclick="setAcceso('publica',this)" id="pa-pub">P&uacute;blica</div>
+          <div class="pill" onclick="setAcceso('privada',this)" id="pa-priv">Privada</div>
+        </div>
+        <div class="caseta-list" id="cas-list">
+          <div class="loading-box"><p style="font-size:14px;font-weight:700;color:var(--tm);">&#x23F3; Cargando casetas&hellip;</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATRACCIONES -->
+    <div class="screen" id="s-atracciones">
+      <div class="screen-pad">
+        <div class="sec-title">&#x1F3A1; Atracciones <span class="badge-count" id="cnt-atr">&mdash;</span></div>
+        <div class="search-wrap">
+          <input class="search-inp" id="atr-q" type="text" placeholder="Buscar atracci&oacute;n&hellip;" oninput="renderAtrac()" autocomplete="off">
+          <span class="search-ico">&#x1F50D;</span>
+        </div>
+        <div class="pills">
+          <div class="pill active" onclick="setAudiencia('all',this)">Todas</div>
+          <div class="pill" onclick="setAudiencia('adult',this)">Adultos</div>
+          <div class="pill" onclick="setAudiencia('child',this)">Ni&ntilde;os</div>
+        </div>
+        <div class="atrac-list" id="atr-list">
+          <div class="loading-box"><p style="font-size:14px;font-weight:700;color:var(--tm);">&#x23F3; Cargando atracciones&hellip;</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLANO -->
+    <div class="screen" id="s-plano">
+      <div class="screen-pad">
+        <div class="sec-title">&#x1F5FA; Plano del Real</div>
+        <div class="plano-box">
+          <div class="plano-hdr"><h3>&#x1F3EE; Real de la Maestranza &middot; 2026</h3></div>
+          <div class="plano-map" id="planoMap">
+            <div class="plano-inner" id="planoInner">
+              <img class="plano-img" src="https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/plano.png" alt="Plano" draggable="false"
+                onerror="this.outerHTML='<div style=padding:40px;text-align:center;color:var(--tm);font-size:14px;font-weight:700>No disponible</div>'">
+            </div>
+          </div>
+          <div class="plano-zoom-row">
+            <button class="zbtn" onclick="zPlano(1.25)">+</button>
+            <button class="zbtn" onclick="zPlano(0.8)">-</button>
+            <button class="zbtn" style="font-size:13px;" onclick="resetPlano()">&#x21BA; Reset</button>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">&#x1F687; C&oacute;mo llegar</div>
+          <div class="info-row"><span class="ir-lbl">Metro L1</span><span class="ir-val">Prado San Sebasti&aacute;n</span></div>
+          <div class="info-row"><span class="ir-lbl">Bus</span><span class="ir-val">C1, C2, 34, 37</span></div>
+          <div class="info-row"><span class="ir-lbl">A pie</span><span class="ir-val">~15 min desde centro</span></div>
+          <div class="info-row"><span class="ir-lbl">Parking</span><span class="ir-val">Los Remedios / Tablada</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TV / CAMARAS -->
+    <div class="screen" id="s-tv">
+      <div class="screen-pad">
+        <div class="sec-title">&#x1F4FA; TV en Directo</div>
+        <div class="tv-grid" style="margin-bottom:20px;">
+
+          <div class="tv-card" onclick="playStream('7tv','7TV Sevilla','https://especial7tv.gestec-video.com/hls/7TVSEVILLA.m3u8')">
+            <div class="tv-thumb" style="background:#1a0d2e;">
+              <div class="tv-scanlines"></div>
+              <div class="tv-live-badge">&#9679; EN VIVO</div>
+              <div class="tv-logo" style="color:#8822ff;">7TV</div>
+              <div class="tv-play">&#9654;</div>
+            </div>
+            <div class="tv-info">
+              <div class="tv-name">7TV Sevilla &mdash; Directo</div>
+              <div class="tv-desc">Television local con cobertura de la Feria</div>
+              <div class="tv-row">
+                <span class="tv-tag tag-tv">&#128250; TV</span>
+                <button class="open-btn" onclick="event.stopPropagation();playStream('7tv','7TV Sevilla','https://especial7tv.gestec-video.com/hls/7TVSEVILLA.m3u8')">Ver ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tv-card" onclick="playStream('ptv','PTV Sevilla','https://streamer.zapitv.com/PTV_sevilla/index.m3u8')">
+            <div class="tv-thumb" style="background:#0d1a0d;">
+              <div class="tv-scanlines"></div>
+              <div class="tv-live-badge">&#9679; EN VIVO</div>
+              <div class="tv-logo" style="color:#00aa44;">PTV</div>
+              <div class="tv-play">&#9654;</div>
+            </div>
+            <div class="tv-info">
+              <div class="tv-name">PTV Sevilla &mdash; Directo</div>
+              <div class="tv-desc">Partido de Television Sevillana en abierto</div>
+              <div class="tv-row">
+                <span class="tv-tag tag-tv">&#128250; TV</span>
+                <button class="open-btn" onclick="event.stopPropagation();playStream('ptv','PTV Sevilla','https://streamer.zapitv.com/PTV_sevilla/index.m3u8')">Ver ahora</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tv-card" onclick="playStream('csur','Canal Sur TV','https://live-24-canalsur.interactvty.pro/9bb0f4edcb8946e79f5017ddca6c02b0/26af5488cda642ed2eddd27a6328c93b9c03e9181b9d0a825147a7d978e69202.m3u8')">
+            <div class="tv-thumb" style="background:#0d1020;">
+              <div class="tv-scanlines"></div>
+              <div class="tv-live-badge">&#9679; EN VIVO</div>
+              <div class="tv-logo" style="color:#cc0000;">CANAL SUR</div>
+              <div class="tv-play">&#9654;</div>
+            </div>
+            <div class="tv-info">
+              <div class="tv-name">Canal Sur TV &mdash; Directo</div>
+              <div class="tv-desc">Cobertura especial de la Feria de Abril</div>
+              <div class="tv-row">
+                <span class="tv-tag tag-tv">&#128250; TV</span>
+                <button class="open-btn" onclick="event.stopPropagation();playStream('csur','Canal Sur TV','https://live-24-canalsur.interactvty.pro/9bb0f4edcb8946e79f5017ddca6c02b0/26af5488cda642ed2eddd27a6328c93b9c03e9181b9d0a825147a7d978e69202.m3u8')">Ver ahora</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sec-title" id="camaras-sec">&#x1F4F7; C&aacute;maras en Directo</div>
+        <div style="background:rgba(181,0,30,.07);border-radius:10px;padding:8px 12px;margin-bottom:14px;font-size:12px;color:var(--tm);font-weight:600;border-left:3px solid var(--r);display:flex;justify-content:space-between;align-items:center;">
+          <span>&#x1F534; Tr&aacute;fico Sevilla &mdash; cada 60s</span>
+          <span id="cam-countdown" style="color:var(--r);font-weight:900;font-size:13px;">60s</span>
+        </div>
+
+        <div class="cam-card">
+          <div class="cam-wrap">
+            <div class="cam-err" id="cam55-err">
+              <div class="cam-err-ico">&#128247;</div>
+              <span>C&aacute;mara no disponible</span>
+            </div>
+            <img class="cam-img" id="cam55-img" referrerpolicy="no-referrer" alt="Glorieta Cigarreras">
+            <span class="cam-live-badge">&#9679; LIVE</span>
+            <button class="cam-refresh-btn" onclick="refreshCam('cam55')">&#128260; Actualizar</button>
+            <span class="cam-ts" id="cam55-ts"></span>
+          </div>
+          <div class="cam-info">
+            <div class="cam-name">Glorieta Cigarreras</div>
+            <div class="cam-desc">Acceso principal al recinto ferial</div>
+            <div class="cam-row">
+              <span class="tv-tag tag-cam">&#128247; C&aacute;mara</span>
+              <button class="open-btn" onclick="openCamFull('cam55')">Ampliar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cam-card">
+          <div class="cam-wrap">
+            <div class="cam-err" id="cam56-err">
+              <div class="cam-err-ico">&#128247;</div>
+              <span>C&aacute;mara no disponible</span>
+            </div>
+            <img class="cam-img" id="cam56-img" referrerpolicy="no-referrer" alt="Flota de India 1">
+            <span class="cam-live-badge">&#9679; LIVE</span>
+            <button class="cam-refresh-btn" onclick="refreshCam('cam56')">&#128260; Actualizar</button>
+            <span class="cam-ts" id="cam56-ts"></span>
+          </div>
+          <div class="cam-info">
+            <div class="cam-name">Flota de India 1</div>
+            <div class="cam-desc">Avenida de acceso norte</div>
+            <div class="cam-row">
+              <span class="tv-tag tag-cam">&#128247; C&aacute;mara</span>
+              <button class="open-btn" onclick="openCamFull('cam56')">Ampliar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cam-card">
+          <div class="cam-wrap">
+            <div class="cam-err" id="cam85-err">
+              <div class="cam-err-ico">&#128247;</div>
+              <span>C&aacute;mara no disponible</span>
+            </div>
+            <img class="cam-img" id="cam85-img" referrerpolicy="no-referrer" alt="Asunci&oacute;n / Flota de India">
+            <span class="cam-live-badge">&#9679; LIVE</span>
+            <button class="cam-refresh-btn" onclick="refreshCam('cam85')">&#128260; Actualizar</button>
+            <span class="cam-ts" id="cam85-ts"></span>
+          </div>
+          <div class="cam-info">
+            <div class="cam-name">Asunci&oacute;n / Flota de India</div>
+            <div class="cam-desc">Cruce principal de acceso al recinto</div>
+            <div class="cam-row">
+              <span class="tv-tag tag-cam">&#128247; C&aacute;mara</span>
+              <button class="open-btn" onclick="openCamFull('cam85')">Ampliar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cam-card">
+          <div class="cam-wrap">
+            <div class="cam-err" id="cam28-err">
+              <div class="cam-err-ico">&#128247;</div>
+              <span>C&aacute;mara no disponible</span>
+            </div>
+            <img class="cam-img" id="cam28-img" referrerpolicy="no-referrer" alt="Plaza de Cuba">
+            <span class="cam-live-badge">&#9679; LIVE</span>
+            <button class="cam-refresh-btn" onclick="refreshCam('cam28')">&#128260; Actualizar</button>
+            <span class="cam-ts" id="cam28-ts"></span>
+          </div>
+          <div class="cam-info">
+            <div class="cam-name">Plaza de Cuba</div>
+            <div class="cam-desc">Puerta de Los Remedios &mdash; sur del recinto</div>
+            <div class="cam-row">
+              <span class="tv-tag tag-cam">&#128247; C&aacute;mara</span>
+              <button class="open-btn" onclick="openCamFull('cam28')">Ampliar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MI UBICACION -->
+    <div class="screen" id="s-ubicacion">
+      <div class="screen-pad">
+        <div class="sec-title">&#x1F4CD; Mi Ubicaci&oacute;n</div>
+        <div class="ubic-hero">
+          <div class="ubic-title">Guarda tu ubicaci&oacute;n</div>
+          <div class="ubic-sub">Marca d&oacute;nde est&aacute;s: tu coche, tu caseta o punto de encuentro. Comp&aacute;rtelo con quien quieras.</div>
+        </div>
+        <div class="ubic-btns">
+          <button class="ubic-btn save" onclick="saveUbic()"><span class="ub-ico">&#x1F4CD;</span><span>Guardar aqu&iacute;</span></button>
+          <button class="ubic-btn nav"  onclick="navToUbic()" id="ubic-nav"   disabled><span class="ub-ico">&#x1F9ED;</span><span>C&oacute;mo llegar</span></button>
+          <button class="ubic-btn share" onclick="shareUbic()" id="ubic-share" disabled><span class="ub-ico">&#x1F4E4;</span><span>Compartir</span></button>
+          <button class="ubic-btn del"  onclick="delUbic()"   id="ubic-del"   disabled><span class="ub-ico">&#x1F5D1;</span><span>Borrar</span></button>
+        </div>
+        <div class="ubic-status" id="ubic-status">
+          <div class="ubic-status-icon">&#x1F4CD;</div>
+          <div class="ubic-status-text">No hay ninguna ubicaci&oacute;n guardada.<br>Pulsa "Guardar aqu&iacute;" para marcar tu posici&oacute;n.</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">&#x1F4A1; Para qu&eacute; sirve?</div>
+          <div class="info-row"><span class="ir-lbl">&#x1F697; Tu coche</span><span class="ir-val">D&oacute;nde aparcaste</span></div>
+          <div class="info-row"><span class="ir-lbl">&#x1F3AA; Tu caseta</span><span class="ir-val">Marca la ubicaci&oacute;n</span></div>
+          <div class="info-row"><span class="ir-lbl">&#x1F465; Encuentro</span><span class="ir-val">Comp&aacute;rtela</span></div>
+          <div class="info-row"><span class="ir-lbl">&#x1F4E4; Compartir</span><span class="ir-val">Link Google Maps</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PUNTOS DE INTERES -->
+    <div class="screen" id="s-poi">
+      <div class="screen-pad">
+        <div class="sec-title">&#x2139; Puntos de Inter&eacute;s</div>
+        <div class="poi-list">
+
+          <div class="poi-card" onclick="openMaps(37.3724,-5.9966)">
+            <div class="poi-ico">&#x1F3DB;</div>
+            <div class="poi-info"><div class="poi-name">Portada Principal 2026</div><div class="poi-desc">Entrada principal del Real de la Maestranza</div></div>
+            <span style="font-size:18px;color:var(--r);">&#x2192;</span>
+          </div>
+
+          <div class="poi-card" onclick="openMaps(37.3712,-6.001)">
+            <div class="poi-ico">&#x1F3A1;</div>
+            <div class="poi-info"><div class="poi-name">Atracciones &mdash; El Infierno</div><div class="poi-desc">Zona norte del recinto ferial</div></div>
+            <span style="font-size:18px;color:var(--r);">&#x2192;</span>
+          </div>
+
+          <div class="poi-card">
+            <div class="poi-ico">&#x1F3E5;</div>
+            <div class="poi-info">
+              <div class="poi-name">Cruz Roja &mdash; Primeros Auxilios</div>
+              <div class="poi-desc">Puesto sanitario principal</div>
+              <a class="tel-link" href="tel:+34954222222">&#x1F4DE; 954 22 22 22</a>
+            </div>
+            <span style="font-size:18px;color:var(--r);cursor:pointer;" onclick="openMaps(37.3700,-5.9970)">&#x2192;</span>
+          </div>
+
+          <div class="poi-card">
+            <div class="poi-ico">&#x1F46E;</div>
+            <div class="poi-info">
+              <div class="poi-name">Polic&iacute;a Local &mdash; Puesto de Mando</div>
+              <div class="poi-desc">C. Manolo V&aacute;zquez 11</div>
+              <a class="tel-link" href="tel:+34954590000">&#x1F4DE; 954 59 00 00</a>
+            </div>
+            <span style="font-size:18px;color:var(--r);cursor:pointer;" onclick="openMaps(37.3703,-5.9980)">&#x2192;</span>
+          </div>
+
+          <div class="poi-card">
+            <div class="poi-ico">&#x1F476;</div>
+            <div class="poi-info">
+              <div class="poi-name">Recinto Ni&ntilde;os Perdidos</div>
+              <div class="poi-desc">C. Gitanillo de Triana 122</div>
+              <a class="tel-link" href="tel:+34954590000">&#x1F4DE; Polic&iacute;a: 954 59 00 00</a>
+            </div>
+            <span style="font-size:18px;color:var(--r);cursor:pointer;" onclick="openMaps(37.3700,-5.9965)">&#x2192;</span>
+          </div>
+
+          <div class="poi-card">
+            <div class="poi-ico">&#x1F692;</div>
+            <div class="poi-info">
+              <div class="poi-name">Ret&eacute;n de Bomberos Principal</div>
+              <div class="poi-desc">C. Antonio Bienvenida 57</div>
+              <a class="tel-link" href="tel:080">&#x1F4DE; Bomberos: 080</a>
+            </div>
+            <span style="font-size:18px;color:var(--r);cursor:pointer;" onclick="openMaps(37.3700,-5.9975)">&#x2192;</span>
+          </div>
+
+          <div class="poi-card">
+            <div class="poi-ico">&#x1F691;</div>
+            <div class="poi-info">
+              <div class="poi-name">Emergencias &mdash; N&uacute;mero &uacute;nico</div>
+              <div class="poi-desc">Polic&iacute;a, Bomberos, Ambulancia</div>
+              <a class="tel-link" href="tel:112">&#x1F4DE; 112 &mdash; Emergencias</a>
+            </div>
+          </div>
+
+          <div class="poi-card">
+            <div class="poi-ico">&#x2139;</div>
+            <div class="poi-info">
+              <div class="poi-name">Oficina Turismo &mdash; Ayuntamiento</div>
+              <div class="poi-desc">Atenci&oacute;n al visitante</div>
+              <a class="tel-link" href="tel:+34954210005">&#x1F4DE; 954 21 00 05</a>
+            </div>
+            <span style="font-size:18px;color:var(--r);cursor:pointer;" onclick="openMaps(37.3699,-5.999)">&#x2192;</span>
+          </div>
+
+          <div class="poi-card" onclick="openMaps(37.3688,-5.9980)">
+            <div class="poi-ico">&#x1F687;</div>
+            <div class="poi-info"><div class="poi-name">Metro &mdash; Prado de San Sebasti&aacute;n</div><div class="poi-desc">L&iacute;nea L1 &middot; ~500m del recinto</div></div>
+            <span style="font-size:18px;color:var(--r);">&#x2192;</span>
+          </div>
+
+          <div class="poi-card" onclick="openMaps(37.3723,-5.9990)">
+            <div class="poi-ico">&#x1F6BB;</div>
+            <div class="poi-info"><div class="poi-name">Aseos P&uacute;blicos</div><div class="poi-desc">Distribuidos por todo el recinto</div></div>
+            <span style="font-size:18px;color:var(--r);">&#x2192;</span>
+          </div>
+
+          <div class="poi-card" onclick="openMaps(37.369,-5.999)">
+            <div class="poi-ico">&#x1F17F;</div>
+            <div class="poi-info"><div class="poi-name">Parking Los Remedios</div><div class="poi-desc">Aparcamiento m&aacute;s cercano al recinto</div></div>
+            <span style="font-size:18px;color:var(--r);">&#x2192;</span>
+          </div>
+
+          <div class="poi-card">
+            <div class="poi-ico">&#x1F696;</div>
+            <div class="poi-info">
+              <div class="poi-name">Taxi Sevilla &mdash; Servicio 24h</div>
+              <div class="poi-desc">Radiotaxi durante la Feria</div>
+              <a class="tel-link" href="tel:+34954580000">&#x1F4DE; 954 58 00 00</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="bot-nav">
+    <button class="bot-btn active" onclick="goBotInicio()" id="b-inicio">
+      <span class="ico">&#x1F3E0;</span>INICIO</button>
+    <button class="bot-btn" onclick="goBotFavs()" id="b-favs">
+      <span class="ico">&#x2B50;</span>FAVORITOS
+      <span class="fav-dot" id="favDot">0</span>
+    </button>
+  </nav>
+  <div class="credit">by Socram MASP &middot; Feria de Abril Sevilla 2026</div>
+</div>
+
+<div class="player-overlay" id="playerOverlay">
+  <div class="player-box">
+    <div class="player-hdr">
+      <span class="player-title" id="playerTitle">Cargando...</span>
+      <button class="player-close" onclick="closePlayer()">&#x2715;</button>
+    </div>
+    <video id="hlsVideo" controls playsinline></video>
+    <div class="player-status" id="playerStatus">Conectando...</div>
+  </div>
+</div>
+
+<div id="camOverlay" onclick="this.style.display='none'"
+  style="position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:1001;display:none;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+  <img id="camFullImg" referrerpolicy="no-referrer"
+    style="max-width:100%;max-height:80vh;border-radius:10px;border:2px solid #F5C800;" alt="">
+  <p style="color:rgba(255,255,255,.5);font-size:12px;margin-top:12px;">Toca para cerrar</p>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+const CAMS = {
+  cam55: 'https://traficosevilla.es/camaras/cam55.jpg',
+  cam56: 'https://traficosevilla.es/camaras/cam56.jpg',
+  cam85: 'https://traficosevilla.es/camaras/cam85.jpg',
+  cam28: 'https://traficosevilla.es/camaras/cam28.jpg'
+};
+const CASETA_SVG = 'https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/caseta.svg';
+const CASETAS_URL = 'https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/casetas.json';
+const ATRACCIONES_URL = 'https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/atracciones.json';
+
+let casetas = [], atracciones = [];
+let casCalleF = '', casAccesoF = 'todas', atrAud = 'all';
+let favs = new Set(JSON.parse(localStorage.getItem('feria26_favs') || '[]'));
+let savedUbic = JSON.parse(localStorage.getItem('feria26_ubic') || 'null');
+let pScale = 1, pX = 0, pY = 0, pDrag = false, pSX = 0, pSY = 0;
+let hlsInst = null, deferredPrompt = null, swReg = null;
+let camSecs = 60;
+
+window.addEventListener('DOMContentLoaded', function() {
+  goTab('inicio');
+  loadCasetas();
+  loadAtracciones();
+  setupPlano();
+  updateUbicUI();
+  updateFavDot();
+  allCams();
+  startCamTimer();
+
+  window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('installBar').classList.add('show');
+  });
+  window.addEventListener('appinstalled', function() {
+    document.getElementById('installBar').classList.remove('show');
+  });
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      swReg = reg;
+      reg.update().catch(function(){});
+      reg.addEventListener('updatefound', function() {
+        var nw = reg.installing;
+        nw.addEventListener('statechange', function() {
+          if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+            document.getElementById('updateBar').classList.add('show');
+          }
+        });
+      });
+    }).catch(function(){});
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      window.location.reload();
+    });
+  }
+});
+
+// ── CASETAS ──
+async function loadCasetas() {
+  try {
+    var r = await fetch(CASETAS_URL);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    casetas = await r.json();
+    buildCallePills();
+    renderCasetas();
+  } catch(e) {
+    document.getElementById('cas-list').innerHTML = '<div class="empty"><div class="e-ico">&#9888;&#65039;</div><p>Error al cargar casetas</p><button onclick="loadCasetas()" style="margin-top:12px;background:var(--r);color:#fff;border:none;padding:8px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-family:Nunito,sans-serif;">Reintentar</button></div>';
+    document.getElementById('cnt-cas').textContent = '!';
+  }
+}
+
+function buildCallePills() {
+  var calles = [...new Set(casetas.map(function(c){ return c.calle; }))].sort();
+  var cont = document.getElementById('cas-calle-pills');
+  cont.innerHTML = '';
+  var all = document.createElement('div');
+  all.className = 'pill active';
+  all.textContent = 'Todas';
+  all.onclick = function(){ setCalle('', all); };
+  cont.appendChild(all);
+  calles.forEach(function(c) {
+    var d = document.createElement('div');
+    d.className = 'pill';
+    d.textContent = c.replace('IGNACIO SANCHEZ MEJIAS','I.S.MEJIAS').replace('RAFAEL GOMEZ ORTEGA','R.G.ORTEGA').replace('R. TORRES BOMBITA','BOMBITA');
+    d.onclick = function(){ setCalle(c, d); };
+    cont.appendChild(d);
+  });
+}
+
+function setCalle(c, el) {
+  casCalleF = c;
+  document.querySelectorAll('#cas-calle-pills .pill').forEach(function(p){ p.classList.remove('active'); });
+  el.classList.add('active');
+  renderCasetas();
+}
+function setAcceso(t, el) {
+  casAccesoF = t;
+  ['pa-todas','pa-pub','pa-priv'].forEach(function(i){ document.getElementById(i).classList.remove('active'); });
+  el.classList.add('active');
+  renderCasetas();
+}
+
+function renderCasetas() {
+  if (!casetas.length) return;
+  var q = (document.getElementById('cas-q').value || '').toLowerCase().trim();
+  var list = casetas;
+  if (casCalleF) list = list.filter(function(c){ return c.calle === casCalleF; });
+  if (casAccesoF === 'publica') list = list.filter(function(c){ return c.esPublica; });
+  if (casAccesoF === 'privada') list = list.filter(function(c){ return !c.esPublica; });
+  if (q) list = list.filter(function(c){ return c.nombre.toLowerCase().includes(q) || c.calle.toLowerCase().includes(q); });
+  document.getElementById('cnt-cas').textContent = list.length;
+  var cont = document.getElementById('cas-list');
+  if (!list.length) { cont.innerHTML = '<div class="empty"><div class="e-ico">&#128269;</div><p>No se encontraron casetas</p></div>'; return; }
+  var html = '';
+  for (var i = 0; i < list.length; i++) {
+    var c = list[i];
+    var isFav = favs.has(c.id);
+    var badgeClass = c.esPublica ? 'badge-pub' : 'badge-priv';
+    var badgeTxt = c.esPublica ? 'P&Uacute;BLICA' : 'PRIVADA';
+    var favStar = isFav ? '&#11088;' : '&#9734;';
+    var cardClass = c.esPublica ? 'caseta-card pub' : 'caseta-card';
+    html += '<div class="' + cardClass + '">';
+    html += '<div class="caseta-ico"><img src="' + CASETA_SVG + '" width="30" height="30" alt="" onerror="this.style.display=\'none\'"></div>';
+    html += '<div class="caseta-info">';
+    html += '<div class="caseta-name">' + c.nombre + '</div>';
+    html += '<div class="caseta-meta"><span>&#128205; ' + c.calle + '</span><span>N&ordm; ' + c.numero + '</span></div>';
+    html += '</div>';
+    html += '<div class="caseta-right">';
+    html += '<span class="badge ' + badgeClass + '">' + badgeTxt + '</span>';
+    html += '<button class="fav-btn" onclick="toggleFav(' + c.id + ',this)">' + favStar + '</button>';
+    html += '<button class="map-btn" onclick="openMaps(' + c.lat + ',' + c.lon + ')">&#128506;&#65039; IR</button>';
+    html += '</div></div>';
+  }
+  cont.innerHTML = html;
+}
+
+// ── FAVS ──
+function toggleFav(id, btn) {
+  if (favs.has(id)) { favs.delete(id); btn.innerHTML = '&#9734;'; showToast('Eliminado de favoritos'); }
+  else { favs.add(id); btn.innerHTML = '&#11088;'; showToast('&#11088; A&ntilde;adido a favoritos!'); }
+  localStorage.setItem('feria26_favs', JSON.stringify([...favs]));
+  updateFavDot();
+}
+function updateFavDot() {
+  var d = document.getElementById('favDot');
+  d.style.display = favs.size ? 'flex' : 'none';
+  d.textContent = favs.size;
+}
+function showFavs() {
+  if (!casetas.length) { showToast('Cargando...'); return; }
+  goTab('casetas');
+  document.getElementById('cas-q').value = '';
+  setCalle('', document.querySelector('#cas-calle-pills .pill'));
+  setAcceso('todas', document.getElementById('pa-todas'));
+  var cont = document.getElementById('cas-list');
+  if (!favs.size) { cont.innerHTML = '<div class="empty"><div class="e-ico">&#11088;</div><p>No tienes favoritos a&uacute;n</p></div>'; document.getElementById('cnt-cas').textContent = '0'; return; }
+  var list = casetas.filter(function(c){ return favs.has(c.id); });
+  document.getElementById('cnt-cas').textContent = list.length;
+  var html = '';
+  for (var i = 0; i < list.length; i++) {
+    var c = list[i];
+    var cardClass = c.esPublica ? 'caseta-card pub' : 'caseta-card';
+    html += '<div class="' + cardClass + '">';
+    html += '<div class="caseta-ico"><img src="' + CASETA_SVG + '" width="30" height="30" alt="" onerror="this.style.display=\'none\'"></div>';
+    html += '<div class="caseta-info"><div class="caseta-name">' + c.nombre + '</div>';
+    html += '<div class="caseta-meta"><span>&#128205; ' + c.calle + '</span><span>N&ordm; ' + c.numero + '</span></div></div>';
+    html += '<div class="caseta-right">';
+    html += '<span class="badge ' + (c.esPublica ? 'badge-pub' : 'badge-priv') + '">' + (c.esPublica ? 'P&Uacute;BLICA' : 'PRIVADA') + '</span>';
+    html += '<button class="fav-btn" onclick="toggleFav(' + c.id + ',this)">&#11088;</button>';
+    html += '<button class="map-btn" onclick="openMaps(' + c.lat + ',' + c.lon + ')">&#128506;&#65039; IR</button>';
+    html += '</div></div>';
+  }
+  cont.innerHTML = html;
+}
+
+// ── ATRACCIONES ──
+async function loadAtracciones() {
+  try {
+    var r = await fetch(ATRACCIONES_URL);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    atracciones = await r.json();
+    renderAtrac();
+  } catch(e) {
+    document.getElementById('atr-list').innerHTML = '<div class="empty"><div class="e-ico">&#9888;&#65039;</div><p>Error al cargar atracciones</p><button onclick="loadAtracciones()" style="margin-top:12px;background:var(--r);color:#fff;border:none;padding:8px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-family:Nunito,sans-serif;">Reintentar</button></div>';
+    document.getElementById('cnt-atr').textContent = '!';
+  }
+}
+function setAudiencia(a, el) {
+  atrAud = a;
+  document.querySelectorAll('#s-atracciones .pills .pill').forEach(function(p){ p.classList.remove('active'); });
+  el.classList.add('active');
+  renderAtrac();
+}
+function renderAtrac() {
+  if (!atracciones.length) return;
+  var q = (document.getElementById('atr-q').value || '').toLowerCase().trim();
+  var list = atracciones;
+  if (atrAud !== 'all') list = list.filter(function(a){ return a.audience === atrAud; });
+  if (q) list = list.filter(function(a){ return a.name.toLowerCase().includes(q); });
+  document.getElementById('cnt-atr').textContent = list.length;
+  var cont = document.getElementById('atr-list');
+  if (!list.length) { cont.innerHTML = '<div class="empty"><div class="e-ico">&#127905;</div><p>No se encontraron atracciones</p></div>'; return; }
+  var html = '';
+  for (var i = 0; i < list.length; i++) {
+    var a = list[i];
+    var badge = a.audience === 'adult' ? '<span class="atrac-badge badge-adult">&#128104; Adultos</span>' : '<span class="atrac-badge badge-child">&#128102; Ni&ntilde;os</span>';
+    html += '<div class="atrac-card" onclick="openMaps(' + a.lat + ',' + a.lon + ')">';
+    html += '<div class="atrac-img-wrap"><img class="atrac-img" src="' + a.image + '" alt="' + a.name + '" loading="lazy" onerror="this.parentNode.innerHTML=\'<div style=width:78px;height:70px;background:#f5e8c0;display:flex;align-items:center;justify-content:center;font-size:28px>&#127905;</div>\'"></div>';
+    html += '<div class="atrac-body"><div class="atrac-name">' + a.name + '</div>';
+    html += '<div class="atrac-price">~' + (a.price || '?') + '&euro; aprox.</div>' + badge + '</div>';
+    html += '<span style="font-size:18px;color:var(--r);padding:0 10px;flex-shrink:0;">&#8594;</span></div>';
+  }
+  cont.innerHTML = html;
+}
+
+// ── PLANO ──
+function setupPlano() {
+  var map = document.getElementById('planoMap');
+  var pd = 0;
+  map.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 2) pd = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    else if (e.touches.length === 1) { pDrag = true; pSX = e.touches[0].clientX - pX; pSY = e.touches[0].clientY - pY; }
+  }, {passive: true});
+  map.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    if (e.touches.length === 2) {
+      var d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+      pScale = Math.min(5, Math.max(.5, pScale * (d / pd))); pd = d; applyP();
+    } else if (pDrag && e.touches.length === 1) { pX = e.touches[0].clientX - pSX; pY = e.touches[0].clientY - pSY; applyP(); }
+  }, {passive: false});
+  map.addEventListener('touchend', function(){ pDrag = false; }, {passive: true});
+  map.addEventListener('mousedown', function(e){ pDrag = true; pSX = e.clientX - pX; pSY = e.clientY - pY; });
+  map.addEventListener('mousemove', function(e){ if (pDrag) { pX = e.clientX - pSX; pY = e.clientY - pSY; applyP(); } });
+  map.addEventListener('mouseup', function(){ pDrag = false; });
+  map.addEventListener('mouseleave', function(){ pDrag = false; });
+}
+function applyP() { document.getElementById('planoInner').style.transform = 'translate(' + pX + 'px,' + pY + 'px) scale(' + pScale + ')'; }
+function zPlano(f) { pScale = Math.min(5, Math.max(.5, pScale * f)); applyP(); }
+function resetPlano() { pScale = 1; pX = 0; pY = 0; var el = document.getElementById('planoInner'); el.style.transition = 'transform .3s'; applyP(); setTimeout(function(){ el.style.transition = ''; }, 320); }
+
+// ── TV ──
+function playStream(id, title, url) {
+  var ov = document.getElementById('playerOverlay');
+  var v = document.getElementById('hlsVideo');
+  var st = document.getElementById('playerStatus');
+  document.getElementById('playerTitle').textContent = title;
+  ov.classList.add('open'); st.textContent = 'Conectando...';
+  if (hlsInst) { hlsInst.destroy(); hlsInst = null; }
+  v.pause(); v.src = '';
+  if (Hls.isSupported()) {
+    hlsInst = new Hls({enableWorker: false, lowLatencyMode: true});
+    hlsInst.loadSource(url); hlsInst.attachMedia(v);
+    hlsInst.on(Hls.Events.MANIFEST_PARSED, function(){ v.play().catch(function(){}); st.textContent = 'Reproduciendo en directo'; });
+    hlsInst.on(Hls.Events.ERROR, function(e, d){ if (d.fatal) st.textContent = 'Error al cargar. Intentalo de nuevo.'; });
+  } else if (v.canPlayType('application/vnd.apple.mpegurl')) {
+    v.src = url; v.play().catch(function(){}); st.textContent = 'Reproduciendo';
+  } else { st.textContent = 'Formato no soportado. Prueba Safari.'; }
+}
+function closePlayer() {
+  document.getElementById('playerOverlay').classList.remove('open');
+  var v = document.getElementById('hlsVideo'); v.pause(); v.src = '';
+  if (hlsInst) { hlsInst.destroy(); hlsInst = null; }
+}
+
+// ── CAMERAS ──
+function loadCam(id) {
+  var img = document.getElementById(id + '-img');
+  var err = document.getElementById(id + '-err');
+  var ts  = document.getElementById(id + '-ts');
+  if (!img) return;
+  img.src = '';
+  img.classList.remove('ok');
+  if (err) err.style.display = 'flex';
+  var src = CAMS[id] + '?t=' + Date.now();
+  img.onload = function() {
+    img.classList.add('ok');
+    if (err) err.style.display = 'none';
+    if (ts) ts.textContent = new Date().toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+  };
+  img.onerror = function() {
+    img.classList.remove('ok');
+    if (err) err.style.display = 'flex';
+    if (ts) ts.textContent = 'Sin senal';
+  };
+  // Small delay so browser doesn't skip the src change
+  setTimeout(function(){ img.src = src; }, 30);
+}
+function allCams() { Object.keys(CAMS).forEach(function(id){ loadCam(id); }); }
+function refreshCam(id) { loadCam(id); showToast('Actualizando camara...'); }
+function openCamFull(id) {
+  var ov = document.getElementById('camOverlay');
+  document.getElementById('camFullImg').src = CAMS[id] + '?t=' + Date.now();
+  ov.style.display = 'flex';
+}
+function startCamTimer() {
+  camSecs = 60;
+  setInterval(function() {
+    camSecs--;
+    var el = document.getElementById('cam-countdown');
+    if (el) el.textContent = camSecs + 's';
+    if (camSecs <= 0) { camSecs = 60; allCams(); }
+  }, 1000);
+}
+function scrollToCams() { document.getElementById('camaras-sec').scrollIntoView({behavior: 'smooth'}); }
+
+// ── UBICACION ──
+function saveUbic() {
+  if (!navigator.geolocation) { showToast('Geolocalizacion no disponible'); return; }
+  showToast('Obteniendo ubicacion...');
+  navigator.geolocation.getCurrentPosition(
+    function(pos) {
+      savedUbic = {lat: pos.coords.latitude, lon: pos.coords.longitude, acc: Math.round(pos.coords.accuracy || 0), ts: Date.now()};
+      localStorage.setItem('feria26_ubic', JSON.stringify(savedUbic));
+      ['ubic-nav','ubic-share','ubic-del'].forEach(function(i){ document.getElementById(i).disabled = false; });
+      updateUbicUI(); showToast('Ubicacion guardada!');
+    },
+    function(){ showToast('No se pudo obtener tu ubicacion'); },
+    {enableHighAccuracy: true, timeout: 12000, maximumAge: 0}
+  );
+}
+function navToUbic() { if (!savedUbic) return; window.open('https://www.google.com/maps/dir/?api=1&destination=' + savedUbic.lat + ',' + savedUbic.lon + '&travelmode=walking', '_blank'); }
+function shareUbic() {
+  if (!savedUbic) return;
+  var url = 'https://www.google.com/maps?q=' + savedUbic.lat + ',' + savedUbic.lon;
+  var text = 'Mi ubicacion en la Feria de Sevilla 2026:\n' + url;
+  if (navigator.share) navigator.share({title: 'Mi ubicacion Feria 2026', text: text, url: url}).catch(function(){});
+  else if (navigator.clipboard) navigator.clipboard.writeText(text).then(function(){ showToast('Copiado al portapapeles!'); });
+  else showToast(url);
+}
+function delUbic() {
+  savedUbic = null; localStorage.removeItem('feria26_ubic');
+  ['ubic-nav','ubic-share','ubic-del'].forEach(function(i){ document.getElementById(i).disabled = true; });
+  updateUbicUI(); showToast('Ubicacion borrada');
+}
+function updateUbicUI() {
+  if (savedUbic) {
+    ['ubic-nav','ubic-share','ubic-del'].forEach(function(i){ document.getElementById(i).disabled = false; });
+  }
+  var s = document.getElementById('ubic-status');
+  if (!savedUbic) {
+    s.innerHTML = '<div class="ubic-status-icon">&#128205;</div><div class="ubic-status-text">No hay ninguna ubicacion guardada.<br>Pulsa "Guardar aqui" para marcar tu posicion.</div>';
+    return;
+  }
+  var d = new Date(savedUbic.ts);
+  var time = d.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'});
+  var date = d.toLocaleDateString('es-ES', {day:'2-digit', month:'2-digit'});
+  s.innerHTML = '<div class="ubic-status-icon">&#9989;</div><div class="ubic-status-text">Guardada el <strong>' + date + ' a las ' + time + '</strong><br>Precision: ~' + (savedUbic.acc || '?') + 'm</div><div class="ubic-status-coord">&#128205; ' + savedUbic.lat.toFixed(5) + ', ' + savedUbic.lon.toFixed(5) + '</div>';
+}
+
+// ── NAVEGACION ──
+function goTab(id) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  var tb = document.getElementById('t-' + id);
+  var sc = document.getElementById('s-' + id);
+  if (tb) tb.classList.add('active');
+  if (sc) sc.classList.add('active');
+  document.querySelectorAll('.bot-btn').forEach(function(b){ b.classList.remove('active'); });
+  if (id === 'inicio') document.getElementById('b-inicio').classList.add('active');
+}
+function goBotInicio() { goTab('inicio'); document.getElementById('b-inicio').classList.add('active'); }
+function goBotFavs() { showFavs(); document.getElementById('b-favs').classList.add('active'); }
+
+// ── UTILS ──
+function openMaps(lat, lon) { window.open('https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon + '&travelmode=walking', '_blank'); }
+function doInstall() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function(r){ if (r.outcome === 'accepted') showToast('App instalada!'); deferredPrompt = null; document.getElementById('installBar').classList.remove('show'); });
+  } else { showToast('En iOS: Compartir > Anadir a pantalla inicio'); }
+}
+function doUpdate() {
+  showToast('Actualizando la app...');
+  if (swReg && swReg.waiting) { swReg.waiting.postMessage({type: 'SKIP_WAITING'}); }
+  else if ('caches' in window) { caches.keys().then(function(k){ return Promise.all(k.map(function(c){ return caches.delete(c); })); }).then(function(){ window.location.reload(true); }).catch(function(){ window.location.reload(true); }); }
+  else { window.location.reload(true); }
+}
+function showToast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 2500); }
+document.getElementById('playerOverlay').addEventListener('click', function(e){ if (e.target === this) closePlayer(); });
+
+</script>
+</body>
+</html>
