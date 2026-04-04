@@ -436,7 +436,47 @@ video{width:100%;display:block;max-height:280px;background:#000;}
           <span>&#x1F534; Tr&aacute;fico Sevilla &mdash; cada 60s</span>
           <span id="cam-countdown" style="color:var(--r);font-weight:900;font-size:13px;">60s</span>
         </div>
-
+ <div class="cam-card">
+          <div class="cam-wrap">
+            <div class="cam-err" id="cam85-err">
+              <div class="cam-err-ico">&#128247;</div>
+              <span>C&aacute;mara no disponible</span>
+            </div>
+            <img class="cam-img" id="cam85-img" referrerpolicy="no-referrer" alt="Asunci&oacute;n / Flota de India">
+            <span class="cam-live-badge">&#9679; LIVE</span>
+            <button class="cam-refresh-btn" onclick="refreshCam('cam85')">&#128260; Actualizar</button>
+            <span class="cam-ts" id="cam85-ts"></span>
+          </div>
+          <div class="cam-info">
+            <div class="cam-name">Asunci&oacute;n / Flota de India</div>
+            <div class="cam-desc">Cruce principal de acceso al recinto</div>
+            <div class="cam-row">
+              <span class="tv-tag tag-cam">&#128247; C&aacute;mara</span>
+              <button class="open-btn" onclick="openCamFull('cam85')">Ampliar</button>
+            </div>
+          </div>
+        </div>
+            <div class="cam-card">
+          <div class="cam-wrap">
+            <div class="cam-err" id="cam20-err">
+              <div class="cam-err-ico">&#128247;</div>
+              <span>C&aacute;mara no disponible</span>
+            </div>
+            <img class="cam-img" id="cam20-img" referrerpolicy="no-referrer" alt="Blas Infante">
+            <span class="cam-live-badge">&#9679; LIVE</span>
+            <button class="cam-refresh-btn" onclick="refreshCam('cam20')">&#128260; Actualizar</button>
+            <span class="cam-ts" id="cam20-ts"></span>
+          </div>
+          <div class="cam-info">
+            <div class="cam-name">Blas Infante</div>
+            <div class="cam-desc">Cruce principal de acceso al recinto</div>
+            <div class="cam-row">
+              <span class="tv-tag tag-cam">&#128247; C&aacute;mara</span>
+              <button class="open-btn" onclick="openCamFull('cam20')">Ampliar</button>
+            </div>
+          </div>
+        </div>
+        
         <div class="cam-card">
           <div class="cam-wrap">
             <div class="cam-err" id="cam55-err">
@@ -478,27 +518,13 @@ video{width:100%;display:block;max-height:280px;background:#000;}
             </div>
           </div>
         </div>
+        
+     
+     
 
-        <div class="cam-card">
-          <div class="cam-wrap">
-            <div class="cam-err" id="cam85-err">
-              <div class="cam-err-ico">&#128247;</div>
-              <span>C&aacute;mara no disponible</span>
-            </div>
-            <img class="cam-img" id="cam85-img" referrerpolicy="no-referrer" alt="Asunci&oacute;n / Flota de India">
-            <span class="cam-live-badge">&#9679; LIVE</span>
-            <button class="cam-refresh-btn" onclick="refreshCam('cam85')">&#128260; Actualizar</button>
-            <span class="cam-ts" id="cam85-ts"></span>
-          </div>
-          <div class="cam-info">
-            <div class="cam-name">Asunci&oacute;n / Flota de India</div>
-            <div class="cam-desc">Cruce principal de acceso al recinto</div>
-            <div class="cam-row">
-              <span class="tv-tag tag-cam">&#128247; C&aacute;mara</span>
-              <button class="open-btn" onclick="openCamFull('cam85')">Ampliar</button>
-            </div>
-          </div>
-        </div>
+       
+        
+        
 
         <div class="cam-card">
           <div class="cam-wrap">
@@ -522,6 +548,8 @@ video{width:100%;display:block;max-height:280px;background:#000;}
         </div>
       </div>
     </div>
+    
+     
 
     <!-- MI UBICACION -->
     <div class="screen" id="s-ubicacion">
@@ -698,7 +726,9 @@ const CAMS = {
   cam55: 'https://traficosevilla.es/camaras/cam55.jpg',
   cam56: 'https://traficosevilla.es/camaras/cam56.jpg',
   cam85: 'https://traficosevilla.es/camaras/cam85.jpg',
-  cam28: 'https://traficosevilla.es/camaras/cam28.jpg'
+  cam28: 'https://traficosevilla.es/camaras/cam28.jpg', 
+  cam20: 'https://traficosevilla.es/camaras/cam20.jpg'
+  
 };
 const CASETA_SVG = 'https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/caseta.svg';
 const CASETAS_URL = 'https://raw.githubusercontent.com/socramtv/Feriadesevilla2026/refs/heads/main/casetas.json';
